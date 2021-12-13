@@ -30,7 +30,7 @@
                                             <div class="col-6 offset-lg-3">
                                                 <mat-label>Enter your email address <span class="compulsory">*</span></mat-label>
                                                 <input type="text" matInput autocomplete="off" class="form-control">
-                                                <button class="btn btn-default btn-sm" type="button">Next</button>
+                                                <button class="btn btn-default btn-sm" (click)=btnEmailNext() type="button">Next</button>
                                             </div>
                                         </div>
                                     </div>
@@ -44,7 +44,8 @@
 
 
             <!-- VERIFY EMAIL ADDRESS -->
-            <div class="row">
+            
+            <div class="row" *ngIf=isValidEmail>
                 <div class="col-12">
                     <div class="box_shadow1 radius_all_10">
                         <div class="row no-gutters">
@@ -55,7 +56,7 @@
                                             <div class="col-6 offset-lg-3">
                                                 <mat-label>Enter the 4 digit code sent on your email address <span class="compulsory">*</span></mat-label>
                                                 <input type="text" matInput autocomplete="off" class="form-control">
-                                                <button class="btn btn-default btn-sm" type="button">Verify</button>&nbsp;
+                                                <button class="btn btn-default btn-sm" (click)=btnEmailVerify() type="button">Verify</button>&nbsp;
                                                 <button class="btn btn-default btn-sm" type="button">Resend Code</button>
                                             </div>
                                         </div>

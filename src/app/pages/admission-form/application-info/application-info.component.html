@@ -27,9 +27,9 @@
                                 <div class="form-padding">
                                     <div class="field_form text-center">
                                         <p>Please select the school year.</p>
-                                        <button class="btn btn-default btn-md btn-school-year" type="button" (click)=selectSchoolYear(1)>Currenct School Year<br>(2021 - 2022) Second Semester</button>
+                                        <button [ngClass]="schoolYear=='1'?'btn-user-selected':''" class="btn btn-default btn-md btn-school-year" type="button" (click)=selectSchoolYear(1)>Currenct School Year<br>(2021 - 2022) Second Semester</button>
                                         &nbsp;
-                                        <button class="btn btn-default btn-md btn-school-year" type="button" (click)=selectSchoolYear(2)>Next School Year<br>(2022 - 2023) First Semester</button>
+                                        <button [ngClass]="schoolYear=='2'?'btn-user-selected':''" class="btn btn-default btn-md btn-school-year" type="button" (click)=selectSchoolYear(2)>Next School Year<br>(2022 - 2023) First Semester</button>
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
 
 
             <!-- SELECT GARDIAN TYPE -->
-            <div class="row">
+            <div class="row" *ngIf=isSchoolYearSelected>
                 <div class="col-12">
                     <div class="box_shadow1 radius_all_10">
                         <div class="row no-gutters">

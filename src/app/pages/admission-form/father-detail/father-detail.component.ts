@@ -48,7 +48,8 @@ export class AdmissionFormFatherDetailComponent implements OnInit {
     this.breadcrumb = breadcrumb;
   }
 
-  btnFatherDetailNext(){
+  btnFatherDetailNext(data){
+    console.log(data);
     this.router.navigate([this.linkPrefix+ '/admission-form/mother-details']);
   }
 }

@@ -6,6 +6,7 @@ import {FormGroup, FormBuilder, FormControl, FormGroupDirective, NgForm, Validat
 import {ErrorStateMatcher} from '@angular/material/core';
 import { LanguageService } from 'src/app/services/language.service';
 import { ContentPageService } from 'src/app/services/content-page.service';
+import {Router} from '@angular/router';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -27,9 +28,12 @@ export class AdmissionFormMobileNumberComponent implements OnInit {
   breadcrumb: String[];
   bannerPicture: String;
 
+  isValidMobile = false;
+
   constructor(
     private languageService: LanguageService,
-    public contentPageService: ContentPageService
+    public contentPageService: ContentPageService,
+    public router: Router
   ) 
   {
     this.getBreadcrumb();
@@ -46,4 +50,11 @@ export class AdmissionFormMobileNumberComponent implements OnInit {
     this.breadcrumb = breadcrumb;
   }
 
+  btnVerifyMobile(){
+    this.router.navigate([this.linkPrefix+ '/admission-form/father-detail']);
+  }
+
+  btnMobileNext(){
+    this.isValidMobile = true;
+  }
 }

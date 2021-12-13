@@ -29,6 +29,7 @@ export class AdmissionFormApplicationInfoComponent implements OnInit {
   bannerPicture: String;
 
   schoolYear: string;
+  isSchoolYearSelected = false;
 
   constructor(
     private languageService: LanguageService,
@@ -51,12 +52,13 @@ export class AdmissionFormApplicationInfoComponent implements OnInit {
   }
 
   selectSchoolYear(schoolYear) {
-    alert(schoolYear);
+    //alert(schoolYear);
+    this.isSchoolYearSelected = true;
     this.schoolYear = schoolYear;
   }
 
   btnApplicationInfoNext(){
-    this.router.navigate([this.linkPrefix+ '/admission-form/father-detail']);
+    this.router.navigate([this.linkPrefix+ '/admission-form/email-address']);
   }
 
 }

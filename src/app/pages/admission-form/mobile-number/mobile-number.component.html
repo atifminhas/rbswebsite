@@ -30,7 +30,7 @@
                                             <div class="col-6 offset-lg-3">
                                                 <mat-label>Enter your mobile number <span class="compulsory">*</span></mat-label>
                                                 <input type="text" matInput autocomplete="off" class="form-control">
-                                                <button class="btn btn-default btn-sm" type="button">Next</button>
+                                                <button class="btn btn-default btn-sm" (click)=btnMobileNext() type="button">Next</button>
                                             </div>
                                         </div>
                                     </div>
@@ -44,7 +44,7 @@
 
 
             <!-- VERIFY MOBILE NUMBER -->
-            <div class="row">
+            <div class="row" *ngIf=isValidMobile>
                 <div class="col-12">
                     <div class="box_shadow1 radius_all_10">
                         <div class="row no-gutters">
@@ -55,7 +55,7 @@
                                             <div class="col-6 offset-lg-3">
                                                 <mat-label>Enter the 4 digit code sent on your mobile number <span class="compulsory">*</span></mat-label>
                                                 <input type="text" matInput autocomplete="off" class="form-control">
-                                                <button class="btn btn-default btn-sm" type="button">Verify</button>&nbsp;
+                                                <button class="btn btn-default btn-sm" (click)=btnVerifyMobile() type="button">Verify</button>&nbsp;
                                                 <button class="btn btn-default btn-sm" type="button">Resend Code</button>
                                             </div>
                                         </div>
