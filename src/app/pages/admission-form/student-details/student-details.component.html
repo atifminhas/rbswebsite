@@ -18,18 +18,21 @@
                 </div>
             </div>
 
-            <!-- FATHER DETAILS -->
+            <!-- STUDENT DETAILS -->
             <div class="row">
                 <div class="col-12">
                     <div class="box_shadow1 radius_all_10">
                         <div class="row no-gutters">
                             <div class="col-md-12">
                                 <div class="form-padding">
-                                    <h4>Father Details</h4><br>
-                                    <h5>General Information</h5>
+                                    <h4>Student Details</h4><br>                                    
                                     <div class="row">
                                         <div class="col-3">
                                             <mat-label>Civil ID <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Civil ID Serial Number <span class="compulsory">*</span></mat-label>
                                             <input type="text" matInput autocomplete="off" class="form-control">
                                         </div>
                                         <div class="col-3">
@@ -47,14 +50,7 @@
                                                 <mat-option [value]='2'>Jordan</mat-option>
                                             </mat-select>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Marital Status <span class="compulsory">*</span></mat-label>
-                                            <mat-select class="form-control">
-                                                <mat-option [value]='1'>Married</mat-option>
-                                                <mat-option [value]='2'>Un-Married</mat-option>
-                                                <mat-option [value]='2'>Divorced</mat-option>
-                                            </mat-select>
-                                        </div>
+                                        
                                     </div>
                                     <div class="row">
                                         <div class="col-3">
@@ -92,55 +88,94 @@
                                             <input type="text" matInput autocomplete="off" class="form-control">
                                         </div>
                                     </div>
-                                    <br>
-                                    <h5>Qualification & Job Details</h5>
                                     <div class="row">
                                         <div class="col-3">
-                                            <mat-label>Qualification <span class="compulsory">*</span></mat-label>
+                                            <mat-label>Gender <span class="compulsory">*</span></mat-label>
                                             <mat-select class="form-control">
-                                                <mat-option [value]='1'>Graduate</mat-option>
-                                                <mat-option [value]='2'>Post Graduate</mat-option>
+                                                <mat-option [value]='1'>Male</mat-option>
+                                                <mat-option [value]='2'>Female</mat-option>                                                
                                             </mat-select>
                                         </div>
                                         <div class="col-3">
-                                            <mat-label>Employeed? <span class="compulsory">*</span></mat-label>
-                                            <mat-select class="form-control">
-                                                <mat-option [value]='1'>Yes</mat-option>
-                                                <mat-option [value]='2'>No</mat-option>
-                                            </mat-select>
+                                            <mat-label>Religion <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
                                         </div>
                                         <div class="col-3">
-                                            <mat-label>Job Title <span class="compulsory">*</span></mat-label>
-                                            <mat-select class="form-control">
-                                                <mat-option [value]='1'>Doctor</mat-option>
-                                                <mat-option [value]='2'>Engineer</mat-option>
-                                                <mat-option [value]='2'>Teacher</mat-option>
-                                            </mat-select>
+                                            <mat-label>Passport Number <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
                                         </div>
                                         <div class="col-3">
-                                            <mat-label>Job Sector <span class="compulsory">*</span></mat-label>
-                                            <mat-select class="form-control">
-                                                <mat-option [value]='1'>Governoment</mat-option>
-                                                <mat-option [value]='2'>Private</mat-option>
-                                            </mat-select>
+                                            <mat-label>Civil ID Expiry Date <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
                                         </div>
                                     </div>
-                                    <br>
-                                    <h5>Contact Information</h5>
                                     <div class="row">
                                         <div class="col-3">
-                                            <mat-label>Mobile Number <span class="compulsory">*</span></mat-label>
+                                            <mat-label>Date of Birth <span class="compulsory">*</span></mat-label>
                                             <input type="text" matInput autocomplete="off" class="form-control">
                                         </div>
                                         <div class="col-3">
-                                            <mat-label>Home Phone Number <span class="compulsory">*</span></mat-label>
+                                            <mat-label>Birth Certificate No <span class="compulsory">*</span></mat-label>
                                             <input type="text" matInput autocomplete="off" class="form-control">
                                         </div>
                                         <div class="col-3">
-                                            <mat-label>Email Address <span class="compulsory">*</span></mat-label>
+                                            <mat-label>Birth Certificate Issue Date <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Country of Birth <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <mat-label>Birth Certificate Issue Country <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Grade Applied For <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        
+                                    </div>
+                                    <br>
+                                    <h5>Address Details</h5>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <mat-label>Area <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Block <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Street <span class="compulsory">*</span></mat-label>
                                             <input type="email" matInput autocomplete="off" class="form-control">
                                         </div>
-                                    </div>                                    
+                                        <div class="col-3">
+                                            <mat-label>Avenue <span class="compulsory">*</span></mat-label>
+                                            <input type="email" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <mat-label>House Number <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>                                       
+                                    </div>
+                                    <br>
+                                    <h5>Health Status</h5>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <mat-label>Student has health problems? <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Health Status Details <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>                                       
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -150,15 +185,12 @@
             <br>
             <div class="row">
                 <div class="col-12 text-center">
-                    <button class="btn btn-default btn-sm" (click)="btnFatherDetailNext()" type="button">Next</button>
+                    <button class="btn btn-default btn-sm" (click)="btnStudentDetailsNext()" type="button">Next</button>
                 </div>
             </div>
-            
-
         </div>
     </section>
     <!-- END SECTION ADMISSION FORM -->
     
     <app-footer></app-footer>
 </div>
-

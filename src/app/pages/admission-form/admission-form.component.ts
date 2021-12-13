@@ -9,6 +9,7 @@ import {FormGroup, FormBuilder, FormControl, FormGroupDirective, NgForm, Validat
 import {ErrorStateMatcher} from '@angular/material/core';
 import { Router } from '@angular/router';
 
+
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -41,7 +42,7 @@ export class AdmissionFormComponent implements OnInit {
   isConfirmed: boolean = false;
 
   constructor(
-    private router: Router,
+    private router: Router,    
     private dialog: MatDialog,
     private languageService: LanguageService,
     public contentPageService: ContentPageService
@@ -63,11 +64,12 @@ export class AdmissionFormComponent implements OnInit {
     this.breadcrumb = breadcrumb;
   }
 
-  openDisclaimer() {
+  openDisclaimer() {    
     this.disclaimerDialog = this.dialog.open(DialogDisclaimer, {data: {close: () => {this.confirmDisclaimer()}}});
-    this.disclaimerDialog.afterClosed().subscribe(() => {
-      if(!this.isConfirmed) {
-        this.router.navigate(['application-info']);
+    this.disclaimerDialog.afterClosed().subscribe(() => {      
+      if(!this.isConfirmed) { 
+        
+        this.router.navigate([this.linkPrefix+ '/admission-form/application-info']);
         //this.disclaimerDialog = this.dialog.open(DialogDisclaimer, {data: {close: () => {this.confirmDisclaimer()}}});
       }
     });

@@ -18,6 +18,10 @@ import { AdmissionFormApplicationInfoComponent } from './pages/admission-form/ap
 import { AdmissionFormEmailAddressComponent } from './pages/admission-form/email-address/email-address.component';
 import { AdmissionFormMobileNumberComponent } from './pages/admission-form/mobile-number/mobile-number.component';
 import { AdmissionFormFatherDetailComponent } from './pages/admission-form/father-detail/father-detail.component';
+import { AdmissionFormMotherDetailsComponent } from './pages/admission-form/mother-details/mother-details.component';
+import { AdmissionFormStudentDetailsComponent } from './pages/admission-form/student-details/student-details.component';
+import { AdmissionFormAskRelativeComponent } from './pages/admission-form/ask-relative/ask-relative.component';
+import { AdmissionFormAskAnotherStudentComponent } from './pages/admission-form/ask-another-student/ask-another-student.component';
 
 export function ComplexUrlMatcher(paramName: string, regex: RegExp) {
   return (
@@ -182,6 +186,22 @@ const routes: Routes = [
       {
         path: 'admission-form/father-detail',
         component: AdmissionFormFatherDetailComponent,
+      },
+      {
+        path: 'admission-form/mother-details',
+        component: AdmissionFormMotherDetailsComponent,
+      },
+      {
+        path: 'admission-form/ask-relative',
+        component: AdmissionFormAskRelativeComponent,
+      },
+      {
+        path: 'admission-form/student-details',
+        component: AdmissionFormStudentDetailsComponent,
+      },
+      {
+        path: 'admission-form/ask-another-student',
+        component: AdmissionFormAskAnotherStudentComponent,
       },
     ]
   },

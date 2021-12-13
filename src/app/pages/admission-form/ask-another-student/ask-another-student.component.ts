@@ -8,36 +8,27 @@ import { LanguageService } from 'src/app/services/language.service';
 import { ContentPageService } from 'src/app/services/content-page.service';
 import { Router } from '@angular/router';
 
-/** Error when invalid control is dirty, touched, or submitted. */
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
-
 @Component({
-  selector: 'app-admission-form-father-detail',
-  templateUrl: './father-detail.component.html',
-  styleUrls: ['./father-detail.component.scss'],
+  selector: 'admission-form-app-ask-another-student',
+  templateUrl: './ask-another-student.component.html',
+  styleUrls: ['./ask-another-student.component.scss']
 })
+export class AdmissionFormAskAnotherStudentComponent implements OnInit {
 
-export class AdmissionFormFatherDetailComponent implements OnInit {
   linkPrefix:string = 'en';
 
   breadcrumb: String[];
   bannerPicture: String;
 
+  option: boolean;
+
   constructor(
-    private router: Router, 
     private languageService: LanguageService,
-    public contentPageService: ContentPageService
-  ) 
-  {
-    this.getBreadcrumb();
-  }
-  
-  ngOnInit(): void {    
+    public contentPageService: ContentPageService,
+    private router: Router
+  ) { this.getBreadcrumb();}
+
+  ngOnInit(): void {
     this.linkPrefix = this.languageService.currentLanguage;
   }
 
@@ -48,7 +39,10 @@ export class AdmissionFormFatherDetailComponent implements OnInit {
     this.breadcrumb = breadcrumb;
   }
 
-  btnFatherDetailNext(){
-    this.router.navigate([this.linkPrefix+ '/admission-form/mother-details']);
+  btnAddStudent(option){
+    if(option == true)
+      this.router.navigate([this.linkPrefix+ '/admission-form/student-details']);
+    else  
+    this.router.navigate([this.linkPrefix+ '/admission-form/student-details']);
   }
 }

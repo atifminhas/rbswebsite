@@ -8,6 +8,7 @@ import { LanguageService } from 'src/app/services/language.service';
 import { ContentPageService } from 'src/app/services/content-page.service';
 import { Router } from '@angular/router';
 
+
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -15,14 +16,13 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
-
 @Component({
-  selector: 'app-admission-form-father-detail',
-  templateUrl: './father-detail.component.html',
-  styleUrls: ['./father-detail.component.scss'],
+  selector: 'admission-form-app-student-details',
+  templateUrl: './student-details.component.html',
+  styleUrls: ['./student-details.component.scss']
 })
+export class AdmissionFormStudentDetailsComponent implements OnInit {
 
-export class AdmissionFormFatherDetailComponent implements OnInit {
   linkPrefix:string = 'en';
 
   breadcrumb: String[];
@@ -32,23 +32,17 @@ export class AdmissionFormFatherDetailComponent implements OnInit {
     private router: Router, 
     private languageService: LanguageService,
     public contentPageService: ContentPageService
-  ) 
-  {
-    this.getBreadcrumb();
-  }
-  
-  ngOnInit(): void {    
-    this.linkPrefix = this.languageService.currentLanguage;
-  }
+  ) { this.getBreadcrumb(); }
 
+  ngOnInit(): void {
+  }
   getBreadcrumb() {
     var breadcrumb: String[] = [];
     breadcrumb.push("Home");
     breadcrumb.push("Admission Form");
     this.breadcrumb = breadcrumb;
   }
-
-  btnFatherDetailNext(){
-    this.router.navigate([this.linkPrefix+ '/admission-form/mother-details']);
+  btnStudentDetailsNext(){
+    this.router.navigate([this.linkPrefix+ '/admission-form/ask-another-student']);
   }
 }

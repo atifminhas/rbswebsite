@@ -8,8 +8,8 @@ import * as crypto from 'crypto-js';
 export class ApiService {
   private enc = crypto.enc.Base64;
   private privateKey = 'Bv3WVq4Kv2R6O53dpCpsaRgCS96REy8490KFc3AM';
-  private baseUrl = 'http://localhost:58436/api/v1/app';
-  //private baseUrl = 'http://api.alruya.edu.kw/api/v1/app';
+  //private baseUrl = 'http://localhost:58436/api/v1/app';
+  private baseUrl = 'http://api.alruya.edu.kw/api/v1/app';
   private headerPrefix = 'RBS-Net-Api';
   constructor(
     private http: HttpClient,

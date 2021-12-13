@@ -51,6 +51,10 @@ import { AdmissionFormApplicationInfoComponent } from './admission-form/applicat
 import { AdmissionFormEmailAddressComponent } from './admission-form/email-address/email-address.component';
 import { AdmissionFormMobileNumberComponent } from './admission-form/mobile-number/mobile-number.component';
 import { AdmissionFormFatherDetailComponent } from './admission-form/father-detail/father-detail.component';
+import { AdmissionFormMotherDetailsComponent } from './admission-form/mother-details/mother-details.component';
+import { AdmissionFormStudentDetailsComponent } from './admission-form/student-details/student-details.component';
+import { AdmissionFormAskRelativeComponent } from './admission-form/ask-relative/ask-relative.component';
+import { AdmissionFormAskAnotherStudentComponent } from './admission-form/ask-another-student/ask-another-student.component';
 
 @NgModule({
   declarations: [
@@ -75,9 +79,14 @@ import { AdmissionFormFatherDetailComponent } from './admission-form/father-deta
     AdmissionFormEmailAddressComponent,
     AdmissionFormMobileNumberComponent,
     AdmissionFormFatherDetailComponent,
+    AdmissionFormMotherDetailsComponent,
+    AdmissionFormStudentDetailsComponent,
+    AdmissionFormAskRelativeComponent,
+    AdmissionFormAskAnotherStudentComponent,
     CurencyPipe,
     StripHtmlPipe,
-    CustomDatePipe],
+    CustomDatePipe,            
+    ],
   imports: [
     CommonModule,
     CarouselModule,

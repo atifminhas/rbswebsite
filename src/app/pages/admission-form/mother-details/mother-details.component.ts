@@ -17,12 +17,12 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-  selector: 'app-admission-form-father-detail',
-  templateUrl: './father-detail.component.html',
-  styleUrls: ['./father-detail.component.scss'],
+  selector: 'app-admission-form-mother-details',
+  templateUrl: './mother-details.component.html',
+  styleUrls: ['./mother-details.component.scss']
 })
+export class AdmissionFormMotherDetailsComponent implements OnInit {
 
-export class AdmissionFormFatherDetailComponent implements OnInit {
   linkPrefix:string = 'en';
 
   breadcrumb: String[];
@@ -32,15 +32,12 @@ export class AdmissionFormFatherDetailComponent implements OnInit {
     private router: Router, 
     private languageService: LanguageService,
     public contentPageService: ContentPageService
-  ) 
-  {
-    this.getBreadcrumb();
-  }
-  
-  ngOnInit(): void {    
+  ) { this.getBreadcrumb();}
+
+  ngOnInit(): void {
     this.linkPrefix = this.languageService.currentLanguage;
   }
-
+  
   getBreadcrumb() {
     var breadcrumb: String[] = [];
     breadcrumb.push("Home");
@@ -48,7 +45,7 @@ export class AdmissionFormFatherDetailComponent implements OnInit {
     this.breadcrumb = breadcrumb;
   }
 
-  btnFatherDetailNext(){
-    this.router.navigate([this.linkPrefix+ '/admission-form/mother-details']);
+  btnMotherDetailsNext(){
+    this.router.navigate([this.linkPrefix+ '/admission-form/ask-relative']);
   }
 }
