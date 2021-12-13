@@ -1,0 +1,310 @@
+<div id="root">
+    <app-header-menu></app-header-menu>
+
+    <app-breadcrumb-header [breadcrumb]="breadcrumb" [background]="bannerPicture"></app-breadcrumb-header>
+
+    <!-- START SECTION ADMISSION FORM -->
+    <section class="small_pb">
+        <div class="container">	
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="text-center animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.01s" style="animation-delay: 0.01s; opacity: 1;">
+                        <div class="heading_s1 text-center">
+                            <h2 class=" text-center">Admission Form</h2>
+                        </div>
+                        <div class=" text-center"></div>
+                        <div class="small_divider"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SELECT SCHOOL YEAR-->
+            <div class="row">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <div class="row no-gutters">
+                            <div class="col-md-12">
+                                <div class="form-padding">
+                                    <div class="field_form text-center">
+                                        <p>Please select the school year.</p>
+                                        <button class="btn btn-default btn-md btn-school-year" type="button" (click)=selectSchoolYear(1)>Currenct School Year<br>(2021 - 2022) Second Semester</button>
+                                        &nbsp;
+                                        <button class="btn btn-default btn-md btn-school-year" type="button" (click)=selectSchoolYear(2)>Next School Year<br>(2022 - 2023) First Semester</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+
+            <!-- SELECT GARDIAN TYPE -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <div class="row no-gutters">
+                            <div class="col-md-12">
+                                <div class="form-padding">
+                                    <div class="text-center">
+                                        <div class="row">
+                                            <div class="col-6 offset-lg-3">
+                                                <mat-label>Who is submitting the admission application? <span class="compulsory">*</span></mat-label>
+                                                <mat-select class="form-control">
+                                                    <mat-option [value]='1'>Father</mat-option>
+                                                    <mat-option [value]='2'>Mother</mat-option>
+                                                    <mat-option [value]='3'>Guardian</mat-option>
+                                                </mat-select>
+                                                <button class="btn btn-default btn-sm" type="button">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+
+            <!-- EMAIL ADDRESS -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <div class="row no-gutters">
+                            <div class="col-md-12">
+                                <div class="form-padding">
+                                    <div class="text-center">
+                                        <div class="row">
+                                            <div class="col-6 offset-lg-3">
+                                                <mat-label>Enter your email address <span class="compulsory">*</span></mat-label>
+                                                <input type="text" matInput autocomplete="off" class="form-control">
+                                                <button class="btn btn-default btn-sm" type="button">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+
+            <!-- VERIFY EMAIL ADDRESS -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <div class="row no-gutters">
+                            <div class="col-md-12">
+                                <div class="form-padding">
+                                    <div class="text-center">
+                                        <div class="row">
+                                            <div class="col-6 offset-lg-3">
+                                                <mat-label>Enter the 4 digit code sent on your email address <span class="compulsory">*</span></mat-label>
+                                                <input type="text" matInput autocomplete="off" class="form-control">
+                                                <button class="btn btn-default btn-sm" type="button">Verify</button>&nbsp;
+                                                <button class="btn btn-default btn-sm" type="button">Resend Code</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+
+            <!-- EMAIL MOBILE -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <div class="row no-gutters">
+                            <div class="col-md-12">
+                                <div class="form-padding">
+                                    <div class="text-center">
+                                        <div class="row">
+                                            <div class="col-6 offset-lg-3">
+                                                <mat-label>Enter your mobile number <span class="compulsory">*</span></mat-label>
+                                                <input type="text" matInput autocomplete="off" class="form-control">
+                                                <button class="btn btn-default btn-sm" type="button">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+
+            <!-- VERIFY MOBILE -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <div class="row no-gutters">
+                            <div class="col-md-12">
+                                <div class="form-padding">
+                                    <div class="text-center">
+                                        <div class="row">
+                                            <div class="col-6 offset-lg-3">
+                                                <mat-label>Enter the 4 digit code sent on your mobile <span class="compulsory">*</span></mat-label>
+                                                <input type="text" matInput autocomplete="off" class="form-control">
+                                                <button class="btn btn-default btn-sm" type="button">Verify</button>&nbsp;
+                                                <button class="btn btn-default btn-sm" type="button">Resend Code</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!-- FATHER DETAILS -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <div class="row no-gutters">
+                            <div class="col-md-12">
+                                <div class="form-padding">
+                                    <h4>Father Details</h4><br>
+                                    <h5>General Information</h5>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <mat-label>Civil ID <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Nationality Category <span class="compulsory">*</span></mat-label>
+                                            <mat-select class="form-control">
+                                                <mat-option [value]='1'>Kuwaiti</mat-option>
+                                                <mat-option [value]='2'>Non-Kuwaiti</mat-option>
+                                            </mat-select>
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Nationality <span class="compulsory">*</span></mat-label>
+                                            <mat-select class="form-control">
+                                                <mat-option [value]='1'>Kuwait</mat-option>
+                                                <mat-option [value]='2'>Egypt</mat-option>
+                                                <mat-option [value]='2'>Jordan</mat-option>
+                                            </mat-select>
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Marital Status <span class="compulsory">*</span></mat-label>
+                                            <mat-select class="form-control">
+                                                <mat-option [value]='1'>Married</mat-option>
+                                                <mat-option [value]='2'>Un-Married</mat-option>
+                                                <mat-option [value]='2'>Divorced</mat-option>
+                                            </mat-select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <mat-label>First Name (Arabic) <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Second Name (Arabic) <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Third Name (Arabic) <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Fourth Name (Arabic) <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <mat-label>First Name (English) <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Second Name (English) <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Third Name (English) <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Fourth Name (English) <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <h5>Qualification & Job Details</h5>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <mat-label>Qualification <span class="compulsory">*</span></mat-label>
+                                            <mat-select class="form-control">
+                                                <mat-option [value]='1'>Graduate</mat-option>
+                                                <mat-option [value]='2'>Post Graduate</mat-option>
+                                            </mat-select>
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Employeed? <span class="compulsory">*</span></mat-label>
+                                            <mat-select class="form-control">
+                                                <mat-option [value]='1'>Yes</mat-option>
+                                                <mat-option [value]='2'>No</mat-option>
+                                            </mat-select>
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Job Title <span class="compulsory">*</span></mat-label>
+                                            <mat-select class="form-control">
+                                                <mat-option [value]='1'>Doctor</mat-option>
+                                                <mat-option [value]='2'>Engineer</mat-option>
+                                                <mat-option [value]='2'>Teacher</mat-option>
+                                            </mat-select>
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Job Sector <span class="compulsory">*</span></mat-label>
+                                            <mat-select class="form-control">
+                                                <mat-option [value]='1'>Governoment</mat-option>
+                                                <mat-option [value]='2'>Private</mat-option>
+                                            </mat-select>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <h5>Contact Information</h5>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <mat-label>Mobile Number <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Home Phone Number <span class="compulsory">*</span></mat-label>
+                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                        <div class="col-3">
+                                            <mat-label>Email Address <span class="compulsory">*</span></mat-label>
+                                            <input type="email" matInput autocomplete="off" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        </div>
+    </section>
+    <!-- END SECTION ADMISSION FORM -->
+    
+    <app-footer></app-footer>
+</div>
+

@@ -1,0 +1,78 @@
+<div id="root">
+    <app-header-menu></app-header-menu>
+
+    <app-breadcrumb-header [breadcrumb]="breadcrumb" [background]="event?.Picture"></app-breadcrumb-header>
+
+    <!-- START SECTION NEWS -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="single_event">
+                        <div class="content_img">
+                            <a href="#">
+                                <img src="{{event?.Picture}}" alt="{{event?.Title}}">
+                            </a>
+                            <div class="event_date radius_all_5">
+                                <h5><span>{{event?.Date | customdate: "date"}}</span> {{event?.Date | customdate: "month"}}</h5>
+                                <span class="event_time radius_lbrb_5 bg_default">{{event?.Time}}</span>
+                            </div>
+                        </div>
+                        <div class="event_title">
+                            <div class="row align-items-end">
+                                <div class="col-md-8">
+                                    <h2>{{event?.Title}}</h2>
+                                    <ul class="list_none content_meta mt-2">
+                                        <li><i class="ti-calendar"></i> 
+                                            <span class="text_default">
+                                                {{event?.Date | customdate: "date"}} {{event?.Date | customdate: "month"}}, {{event?.Date | customdate: "year"}}
+                                                - {{event?.Time}}
+                                            </span>
+                                        </li>
+                                        <li><i class="ti-location-pin"></i><span class="text_default">{{event?.Location}}</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-md-right">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="entry_content">
+                            <span [innerHTML]="event?.Detail"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mt-lg-0 mt-4 pt-3 pt-lg-0">
+                    <div class="sidebar">
+                        <div class="widget widget_recent_post">
+                            <h5 class="widget_title">Upcoming Events</h5>
+                            <ul class="recent_post border_bottom_dash list_none">
+                                <li *ngFor="let event of sideNav">
+                                    <div class="post_footer">
+                                        <div class="post_img">
+                                            <a routerLink="{{'/' + linkPrefix + '/events/' + event?.Id + '/' + event?.Slug}}"><img src="{{event?.Picture}}" alt="{{event?.Title}}"></a>
+                                        </div>
+                                        <div class="post_content">
+                                            <h6><a routerLink="{{'/' + linkPrefix + '/events/' + event?.Id + '/' + event?.Slug}}">{{event?.Title}}</a></h6>
+                                            <span class="post_date">
+                                                {{event?.Date | customdate: "date"}} 
+                                                {{event?.Date | customdate: "month"}}, 
+                                                {{event?.Date | customdate: "year"}}
+                                                <i>{{event?.Time}}</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION NEWS -->
+
+    <app-footer></app-footer>
+</div>
+

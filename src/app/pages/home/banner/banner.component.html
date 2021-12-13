@@ -1,0 +1,33 @@
+<!-- START SECTION BANNER -->
+<section class="banner_section p-0 full_screen">
+    <div class="banner_content_wrap carousel0 slide carousel-fade">
+        <mat-carousel>
+            <mat-carousel-slide *ngFor="let banner of banners">
+                <div class="banner_slide_content" [ngStyle]="{'background-image': 'url(' + banner.Picture + ')'}">
+                    <div class="container">
+                        <!-- STRART CONTAINER -->
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9 col-sm-12 text-center">
+                                <div class="banner_content animation text_white text-center" data-animation="fadeIn" data-animation-delay="0.8s">
+                                    <h2 class="font-weight-bold animation text-uppercase text-center" data-animation="fadeInDown" data-animation-delay="1s">{{banner.Title}}</h2>
+                                    <p class="animation text-center" data-animation="fadeInUp" data-animation-delay="1.5s">{{banner.Detail}}</p>
+                                    <a class="btn btn-default animation" href="#" data-animation="fadeInUp" data-animation-delay="1.8s">{{'GET_STARTED' | translate}}</a>
+                                    <!-- <a class="btn btn-outline-white animation" href="#" data-animation="fadeInUp" data-animation-delay="1.8s">Learn More</a> -->
+                                    <ul class="list_none accredetation-header text-center">
+                                        <li *ngFor="let accreditation of banner.Accreditations">
+                                            <a href="{{accreditation.Link}}" target="_blang"><img src="{{accreditation.Picture}}" alt="{{accreditation.Title}}" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END CONTAINER-->
+                    </div>
+                </div>
+            </mat-carousel-slide>
+        </mat-carousel>
+    </div>
+      
+    
+</section>
+<!-- END SECTION BANNER -->

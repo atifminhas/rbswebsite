@@ -1,0 +1,93 @@
+<div id="root">
+    <app-header-menu></app-header-menu>
+
+    <app-breadcrumb-header [breadcrumb]="breadcrumb" [background]="page?.Picture"></app-breadcrumb-header>
+
+    <!-- START SECTION FEATURE -->
+    <section class="bg_gray">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="text-center xanimation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                        <div class="heading_s1 text-center">
+                            <h2>{{page?.Title}}</h2>
+                        </div>
+                        <span [innerHTML]="page?.Content"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="icon_box text-center bg-white icon_box_style2 box_shadow2 radius_all_10 xanimation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                        <div class="box_icon bg_danger mb-3">
+                            <img src="{{page?.Section1Picture}}" alt="{{page?.Section1Title}}" />
+                        </div>
+                        <div class="intro_desc">
+                            <h5>{{page?.Section1Title}}</h5>
+                            <span [innerHTML]="page?.Section1Content"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon_box text-center bg-white icon_box_style2 box_shadow2 radius_all_10 xanimation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                        <div class="box_icon bg_default mb-3">
+                            <img src="{{page?.Section2Picture}}" alt="{{page?.Section2Title}}" />
+                        </div>
+                        <div class="intro_desc">
+                            <h5>{{page?.Section2Title}}</h5>
+                            <span [innerHTML]="page?.Section2Content"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon_box text-center bg-white icon_box_style2 box_shadow2 radius_all_10 xanimation" data-animation="fadeInUp" data-animation-delay="0.04s">
+                        <div class="box_icon bg_light_green mb-3">
+                            <img src="{{page?.Section3Picture}}" alt="{{page?.Section3Title}}" />
+                        </div>
+                        <div class="intro_desc">
+                            <h5>{{page?.Section3Title}}</h5>
+                            <span [innerHTML]="page?.Section3Content"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <!-- END SECTION FEATURE -->
+
+    <!-- START SECTION ABOUT -->
+    <section class="overflow-hidden p-0">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters ">
+                <div class="col-lg-6">
+                    <div class="h-100 d-flex align-items-center padding_eight_all">
+                        <div class="xanimation" data-animation="fadeInLeft" data-animation-delay="0.02s">
+                            <div class="heading_s1 text-center"> 
+                            <h2 class="text-center">{{page?.Section1Title}}</h2>
+                            </div>
+                            <span [innerHTML]="page?.Section4Content"></span>
+                            <!-- <ul class="list_none list_item">
+                                <li>
+                                    <img src="assets/images/cis.png" width="200" />
+                                </li>
+                                <li>
+                                    <img src="assets/images/msft-school-partner.png" width="200" />
+                                </li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 xanimation" data-animation="fadeInRight" data-animation-delay="0.03s">
+                    <div class="overlay_bg_30 about_img z_index_minus1 h-100 background_bg md-height-300" [ngStyle]="{background: 'url(' + page?.Section4VideoThumb + ')'}" data-img-src="page?.Section4VideoThumb"></div>
+                    <a href="{{page?.Section4VideoURL}}" class="video_popup video_play">
+                        <span class="ripple"><i class="ion-play ml-1"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION ABOUT -->
+
+    <app-footer></app-footer>
+</div>
+

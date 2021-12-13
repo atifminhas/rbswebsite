@@ -1,0 +1,37 @@
+<div id="root">
+    <app-header-menu></app-header-menu>
+
+    <app-breadcrumb-header [breadcrumb]="breadcrumb" [background]="bannerPicture"></app-breadcrumb-header>
+
+    <!-- START SECTION GALLERY -->
+<section>
+	<div class="container">	
+    	
+        <div class="row">
+            <div class="col-md-12">
+                <ngx-masonry>
+                    <div ngxMasonryItem *ngFor="let gallery of galleryList" class="grid_item">
+                        <div class="thumb">
+                            <a href="{{'/' + linkPrefix + '/gallery/' + gallery.Id + '/' + gallery.Slug}}" target="_blank" class="image_link">
+                                <img src="{{gallery.Picture}}" alt="{{gallery.Title}}">
+                            </a>
+                            <div class="gallery_content">
+                                <div class="link_container">
+                                    <a href="{{'/' + linkPrefix + '/gallery/' + gallery.Id + '/' + gallery.Slug}}" target="_blank" class="image_popup"><span class="ripple"><i class="ion-image"></i></span></a>
+                                </div>
+                                <div class="text_holder text_white">
+                               		<h5>{{gallery.Title}}</h5>
+                                </div>
+							</div>
+                        </div>
+                   </div>
+                </ngx-masonry>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION GALLERY -->
+
+    <app-footer></app-footer>
+</div>
+

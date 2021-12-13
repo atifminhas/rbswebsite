@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US">
+  <file original="ng.template" id="ngi18n">
+    <unit id="2241600912183762386">
+      <notes>
+        <note category="description"> Timing:</note>
+        <note category="meaning">Pickup branches list </note>
+        <note category="location">src/app/app.component.html:67</note>
+      </notes>
+      <segment>
+        <source>Timing: </source>
+        <target>Timing: </target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

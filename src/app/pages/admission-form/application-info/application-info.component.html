@@ -1,0 +1,77 @@
+<div id="root">
+    <app-header-menu></app-header-menu>
+
+    <app-breadcrumb-header [breadcrumb]="breadcrumb" [background]="bannerPicture"></app-breadcrumb-header>
+
+    <!-- START SECTION ADMISSION FORM -->
+    <section class="small_pb">
+        <div class="container">	
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="text-center animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.01s" style="animation-delay: 0.01s; opacity: 1;">
+                        <div class="heading_s1 text-center">
+                            <h2 class=" text-center">Admission Form</h2>
+                        </div>
+                        <div class=" text-center"></div>
+                        <div class="small_divider"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SELECT SCHOOL YEAR-->
+            <div class="row">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <div class="row no-gutters">
+                            <div class="col-md-12">
+                                <div class="form-padding">
+                                    <div class="field_form text-center">
+                                        <p>Please select the school year.</p>
+                                        <button class="btn btn-default btn-md btn-school-year" type="button" (click)=selectSchoolYear(1)>Currenct School Year<br>(2021 - 2022) Second Semester</button>
+                                        &nbsp;
+                                        <button class="btn btn-default btn-md btn-school-year" type="button" (click)=selectSchoolYear(2)>Next School Year<br>(2022 - 2023) First Semester</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+
+            <!-- SELECT GARDIAN TYPE -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <div class="row no-gutters">
+                            <div class="col-md-12">
+                                <div class="form-padding">
+                                    <div class="text-center">
+                                        <div class="row">
+                                            <div class="col-6 offset-lg-3">
+                                                <mat-label>Who is submitting the admission application? <span class="compulsory">*</span></mat-label>
+                                                <mat-select class="form-control">
+                                                    <mat-option [value]='1'>Father</mat-option>
+                                                    <mat-option [value]='2'>Mother</mat-option>
+                                                    <mat-option [value]='3'>Guardian</mat-option>
+                                                </mat-select>
+                                                <button class="btn btn-default btn-sm" type="button">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        </div>
+    </section>
+    <!-- END SECTION ADMISSION FORM -->
+    
+    <app-footer></app-footer>
+</div>
+

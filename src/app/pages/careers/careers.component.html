@@ -1,0 +1,65 @@
+<div id="root">
+    <app-header-menu></app-header-menu>
+
+    <app-breadcrumb-header [breadcrumb]="breadcrumb" [background]="bannerPicture"></app-breadcrumb-header>
+
+    <!-- START SECTION CONTACT US -->
+    <section class="small_pb">
+        <div class="container">	
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="text-center animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.01s" style="animation-delay: 0.01s; opacity: 1;">
+                        <div class="heading_s1 text-center">
+                            <h2 class="text-center">{{page?.Title}}</h2>
+                        </div>
+                        <div class="text-center" [innerHTML]='page?.Content'></div>
+                        <div class="small_divider"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <div class="row no-gutters">
+                            <div class="col-md-12 animation animated fadeInLeft" data-animation="fadeInLeft" data-animation-delay="0.02s" style="animation-delay: 0.02s; opacity: 1;">
+                                <div class="padding_eight_all">
+                                    <div class="field_form">
+                                        <form method="post" name="enq">
+                                            <div class="row">
+                                                <div class="form-group col-12">
+                                                    <input required="required" placeholder="{{'YOUR_NAME' | translate}}" id="first-name" class="form-control" name="name" type="text">
+                                                 </div>
+                                                <div class="form-group col-12">
+                                                    <input required="required" placeholder="{{'EMAIL' | translate}}" id="email" class="form-control" name="email" type="email">
+                                                </div>
+                                                <div class="form-group col-12">
+                                                    <input required="required" placeholder="{{'PHONE' | translate}}" id="phone" class="form-control" name="phone" type="tel">
+                                                </div>
+                                                <div class="form-group col-12">
+                                                    <input placeholder="{{'SUBJECT' | translate}}" id="subject" class="form-control" name="subject" type="text">
+                                                </div>
+                                                <div class="form-group col-lg-12">
+                                                    <textarea required="required" placeholder="{{'MESSAGE' | translate}}" id="description" class="form-control" name="message" rows="3"></textarea>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <button type="submit" title="Submit Your Message!" class="btn btn-default" id="submitButton" name="submit" value="Submit">{{'SUBMIT' | translate}}</button>
+                                                </div>
+                                                <div class="col-lg-12 text-center">
+                                                    <div id="alert-msg" class="alert-msg text-center"></div>
+                                                </div>
+                                            </div>
+                                        </form>		
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION CONTACT US -->
+
+    <app-footer></app-footer>
+</div>
+

@@ -1,0 +1,114 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a order-details css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$evadia-primary: mat-palette($mat-indigo);
+$evadia-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$evadia-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$evadia-theme: mat-light-theme($evadia-primary, $evadia-accent, $evadia-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($evadia-theme);
+
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+
+/* You can add global styles to this file, and also import other style files */
+ 
+.rtl_layout, .rtl_layout * {
+    direction: rtl !important;
+}
+.rtl_layout, .rtl_layout *:not(.text-center) {
+    text-align: right;
+}
+.rtl_layout *:not(i):not(mat-icon) {
+    font-family: 'Tajawal', sans-serif !important;
+    font-weight: 500;
+}
+.rtl_layout *::-moz-placeholder {
+    font-family: 'Tajawal', sans-serif !important;
+}
+.rtl_layout .navbar-brand {
+    margin-right: 0px;
+    margin-left: 1rem;
+}
+.rtl_layout .logo_dark {
+    max-width: 305px;
+}
+.rtl_layout .dropdown-toggle::after, .dropdown-toggler::after {
+    margin-left: 0px;
+    margin-right: 5px;
+}
+.rtl_layout .text-center {
+    text-align: center !important;
+}
+.rtl_layout .text-md-left {
+    text-align: right !important;
+}
+.rtl_layout .text-md-right {
+    text-align: left !important;
+}
+.rtl_layout .header_list > li {
+    padding-right: 15px;
+}
+.rtl_layout .border_list::before {
+    right: 0;
+}
+.rtl_layout .icon-bx-wraper.left .icon-bx-xs {
+    float: right !important;
+    margin-right: 0 !important;
+    margin-left: 20px !important;
+}
+.rtl_layout .icon-bx-wraper {
+    text-align: center !important;
+}
+.rtl_layout .mat-calendar-next-button::after {
+    transform: translateX(-2px) rotate(-135deg);    
+}
+.rtl_layout .mat-calendar-previous-button::after {
+    transform: translateX(-2px) rotate(135deg);    
+}
+.rtl_layout .dropdown-menu .dropdown-toggler::after {
+    right: initial;
+    left: 0;
+    transform: translateX(-2px) rotate(90deg);
+}
+.rtl_layout .navbar-expand-lg .navbar-nav .dropdown-item {
+    padding: 8px 10px 8px 25px;
+}
+.rtl_layout .post_img {
+    float: right;
+    margin-right:0;
+    margin-left: 10px;
+}
+.rtl_layout .widget_categories a::before, .widget_archive a::before {
+    content: "\f124";
+    font-family: "ionicons";
+    margin-LEFT: 10px;
+    font-size: 12px;
+}
+
+.disclaimer-dialog {
+    text-align: center !important;
+    p {
+        font-size: 18px;
+        color: #333;
+    }
+}

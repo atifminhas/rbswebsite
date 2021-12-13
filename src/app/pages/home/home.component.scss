@@ -1,0 +1,22 @@
+.icon-cell img {
+    max-width: 20px !important;
+    max-height: 20px !important;
+}
+.next-event {
+    margin-top: 25px !important;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: none !important;
+}
+.mat-calendar-table-header tr th.ng-star-inserted {
+    font-weight: bold !important;
+    color: #2ec4b6 !important;
+}
+.mat-calendar-body-today {
+    border-color: yellow !important;
+}
+.event-date .mat-calendar-body-cell-content {
+    background-color: #2ec4b6 !important;
+    color: #fff !important;
+}

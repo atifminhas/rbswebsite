@@ -1,0 +1,107 @@
+<!-- LOADER -->
+<!-- <div id="preloader">
+    <span class="spinner"></span>
+</div> -->
+<!-- END LOADER --> 
+
+<!-- START HEADER -->
+<header class="header_wrap dark_skin">
+    <div class="top-header light_skin bg-theme">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <ul class="contact_detail list_none text-center text-md-left">
+                        <li><a href="tel:{{getResource('content.contact_no')}}"><i class="ti-mobile"></i>{{getResource('content.contact_no')}}</a></li>
+                        <li><a href="mailto:{{getResource('content.email')}}"><i class="ti-email"></i>{{getResource('content.email')}}</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex flex-wrap align-items-center justify-content-md-end justify-content-center mt-2 mt-md-0">
+                        <!--<ul class="list_none social_icons social_white text-center text-md-right">
+                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                            <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                        </ul>-->
+                        <ul class="list_none header_list ml-1">
+                            <li><a (click)="changeLang()">{{'OTHER_LANGUAGE' | translate}}</a>&nbsp;&nbsp;&nbsp;</li>
+                        </ul>
+                        <ul class="list_none header_list border_list ml-1">
+                            <li><a href="#" data-toggle="modals" data-target="#Login">{{'LOGIN' | translate}}</a></li>
+                            <li><a href="#" class="btn btn-default btn-sm">{{'E_SCHOOL' | translate}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg"> 
+            <a class="navbar-brand" [routerLink]="['/']">
+                <img class="logo_light" src="assets/images/logo_white.png" alt="logo" />
+                <img class="logo_dark" src="assets/images/logo_dark.png" alt="logo" />
+                <img class="logo_default" src="assets/images/logo_dark.png" alt="logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="dropdown" *ngFor="let menu of contentPageService.navigationMenuTop | async">
+                        <!--Internal Dynamic Page-->
+                        <a *ngIf="menu.TypeId == 10 && menu.HasChildren" [ngClass]="{'dropdown-toggle': menu.HasChildren, 'nav-link': true}" data-toggle="dropdown">{{menu.MenuTitle}}</a>
+                        <a *ngIf="menu.TypeId == 10 && !menu.HasChildren" routerLink="{{'/' + linkPrefix + '/pages/' + menu.Id + '/' + menu.Slug}}" [ngClass]="{'dropdown-toggle': menu.HasChildren, 'nav-link': true}" data-toggle="dropdown">{{menu.MenuTitle}}</a>
+                        <!--Internal Static Page-->
+                        <a *ngIf="menu.TypeId == 20 && menu.HasChildren" [ngClass]="{'dropdown-toggle': menu.HasChildren, 'nav-link': true}" data-toggle="dropdown">{{menu.MenuTitle}}</a>
+                        <a *ngIf="menu.TypeId == 20 && !menu.HasChildren" routerLink="{{'/' + linkPrefix + '/' + menu.Slug}}" [ngClass]="{'dropdown-toggle': menu.HasChildren, 'nav-link': true}" data-toggle="dropdown">{{menu.MenuTitle}}</a>
+                        <!--External Page-->
+                        <a *ngIf="menu.TypeId == 30 && menu.HasChildren" [ngClass]="{'dropdown-toggle': menu.HasChildren, 'nav-link': true}" data-toggle="dropdown">{{menu.MenuTitle}}</a>
+                        <a *ngIf="menu.TypeId == 30 && !menu.HasChildren" href="{{menu.Slug}}" target="_blank" [ngClass]="{'dropdown-toggle': menu.HasChildren, 'nav-link': true}" data-toggle="dropdown">{{menu.MenuTitle}}</a>
+                        <div class="dropdown-menu" *ngIf="menu.HasChildren">
+                            <ul> 
+                                <li class="dropdown" *ngFor="let menu1 of menu.SubMenu">
+                                    <!--Internal Dynamic Page-->
+                                    <a *ngIf="menu1.TypeId == 10 && menu1.HasChildren" [ngClass]="{'dropdown-toggler': menu1.HasChildren, 'menu-link': true, 'dropdown-item': true}" data-toggle="dropdown">{{menu1.MenuTitle}}</a>
+                                    <a *ngIf="menu1.TypeId == 10 && !menu1.HasChildren" routerLink="{{'/' + linkPrefix + '/pages/' + menu1.Id + '/' + menu1.Slug}}" [ngClass]="{'dropdown-toggler': menu1.HasChildren, 'menu-link': true, 'dropdown-item': true}" data-toggle="dropdown">{{menu1.MenuTitle}}</a>
+                                    <!--Internal Static Page-->
+                                    <a *ngIf="menu1.TypeId == 20 && menu1.HasChildren" [ngClass]="{'dropdown-toggler': menu1.HasChildren, 'menu-link': true, 'dropdown-item': true}" data-toggle="dropdown">{{menu1.MenuTitle}}</a>
+                                    <a *ngIf="menu1.TypeId == 20 && !menu1.HasChildren" routerLink="{{'/' + linkPrefix + '/' + menu1.Slug}}" [ngClass]="{'dropdown-toggler': menu1.HasChildren, 'menu-link': true, 'dropdown-item': true}" data-toggle="dropdown">{{menu1.MenuTitle}}</a>
+                                    <!--External Page-->
+                                    <a *ngIf="menu1.TypeId == 30 && menu1.HasChildren" [ngClass]="{'dropdown-toggler': menu1.HasChildren, 'menu-link': true, 'dropdown-item': true}" data-toggle="dropdown">{{menu1.MenuTitle}}</a>
+                                    <a *ngIf="menu1.TypeId == 30 && !menu1.HasChildren" href="{{menu1.Slug}}" target="_blank" [ngClass]="{'dropdown-toggler': menu1.HasChildren, 'menu-link': true, 'dropdown-item': true}" data-toggle="dropdown">{{menu1.MenuTitle}}</a>
+                                    <div class="dropdown-menu" *ngIf="menu1.HasChildren">
+                                        <ul> 
+                                            <li *ngFor="let menu2 of menu1.SubMenu">
+                                                <!--Internal Dynamic Page-->
+                                                <a *ngIf="menu2.TypeId == 10 && menu2.HasChildren" class="dropdown-item nav-link nav_item" data-toggle="dropdown">{{menu2.MenuTitle}}</a>
+                                                <a *ngIf="menu2.TypeId == 10 && !menu2.HasChildren" routerLink="{{'/' + linkPrefix + '/pages/' + menu2.Id + '/' + menu2.Slug}}" class="dropdown-item nav-link nav_item" data-toggle="dropdown">{{menu2.MenuTitle}}</a>
+                                                <!--Internal Static Page-->
+                                                <a *ngIf="menu2.TypeId == 20 && menu2.HasChildren" class="dropdown-item nav-link nav_item" data-toggle="dropdown">{{menu2.MenuTitle}}</a>
+                                                <a *ngIf="menu2.TypeId == 20 && !menu2.HasChildren" routerLink="{{'/' + linkPrefix + '/' + menu2.Slug}}" class="dropdown-item nav-link nav_item" data-toggle="dropdown">{{menu2.MenuTitle}}</a>
+                                                <!--External Page-->
+                                                <a *ngIf="menu2.TypeId == 30 && menu2.HasChildren" class="dropdown-item nav-link nav_item" data-toggle="dropdown">{{menu2.MenuTitle}}</a>
+                                                <a *ngIf="menu2.TypeId == 30 && !menu2.HasChildren" href="{{menu2.Slug}}" target="_blank" class="dropdown-item nav-link nav_item" data-toggle="dropdown">{{menu2.MenuTitle}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--<ul class="navbar-nav attr-nav align-items-center">
+                <li><a href="javascript:void(0);" class="nav-link search_trigger"><i class="ion-ios-search-strong"></i></a>
+                    <div class="search-overlay">
+                        <div class="search_wrap">
+                            <form>
+                                <input type="text" placeholder="Search" class="form-control" id="search_input">
+                                <button type="submit" class="search_icon"><i class="ion-ios-search-strong"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            </ul>-->
+        </nav>
+    </div>
+</header>
+<!-- END HEADER --> 

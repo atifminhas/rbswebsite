@@ -1,0 +1,172 @@
+<div id="root">
+    <app-header-menu></app-header-menu>
+    <app-banner></app-banner>
+
+    <!-- Intro Start -->
+    <section class="section-full bg-white content-inner">
+        <div class="container">
+            <div class="row service-area-one">
+                <div class="col-lg-4 m-b30 hidden-sm">
+                    <div class="rdx-thu"><img src="{{page?.Picture}}" alt="{{page?.Title}}"></div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="section-head">
+                        <h2 class="title">{{page?.Title}}</h2>
+                        <span [innerHTML]="page?.Content"></span>
+                    </div>
+                    <div class="row"> 
+                        <div class="col-md-6 col-sm-6 m-t15 m-b15">
+                            <div class="icon-bx-wraper left">
+                                <div class="icon-bx-xs bg-primary radius-circle text-center"> <a href="#" class="icon-cell"><img src="{{page?.Section1Picture}}" /></a> </div>
+                                <div class="icon-content">
+                                    <h5 class="rdx-tilte">{{page?.Section1Title}}</h5>
+                                    <span [innerHTML]="page?.Section1Content"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 m-t15 m-b15">
+                            <div class="icon-bx-wraper left">
+                                <div class="icon-bx-xs bg-primary radius-circle text-center"> <a href="#" class="icon-cell"><img src="{{page?.Section2Picture}}" /></a> </div>
+                                <div class="icon-content">
+                                    <h5 class="rdx-tilte">{{page?.Section2Title}}</h5>
+                                    <span [innerHTML]="page?.Section2Content"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 m-t15 m-b15">
+                            <div class="icon-bx-wraper left">
+                                <div class="icon-bx-xs bg-secondary radius-circle text-center"> <a href="#" class="icon-cell"><img src="{{page?.Section3Picture}}" /></a> </div>
+                                <div class="icon-content">
+                                    <h5 class="rdx-tilte">{{page?.Section3Title}}</h5>
+                                    <span [innerHTML]="page?.Section3Content"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 m-t15 m-b15">
+                            <div class="icon-bx-wraper left">
+                                <div class="icon-bx-xs bg-secondary radius-circle text-center"> <a href="#" class="icon-cell"><img src="{{page?.Section4Picture}}" /></a> </div>
+                                <div class="icon-content">
+                                    <h5 class="rdx-tilte">{{page?.Section4Title}}</h5>
+                                    <span [innerHTML]="page?.Section4Content"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 m-t15 m-b15">
+                            <div class="icon-bx-wraper left">
+                                <div class="icon-bx-xs bg-primary radius-circle text-center"> <a href="#" class="icon-cell"><img src="{{page?.Section5Picture}}" /></a> </div>
+                                <div class="icon-content">
+                                    <h5 class="rdx-tilte">{{page?.Section5Title}}</h5>
+                                    <span [innerHTML]="page?.Section5Content"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 m-t15 m-b15">
+                            <div class="icon-bx-wraper left">
+                                <div class="icon-bx-xs bg-primary radius-circle text-center"> <a href="#" class="icon-cell"><img src="{{page?.Section6Picture}}" /></a> </div>
+                                <div class="icon-content">
+                                    <h5 class="rdx-tilte">{{page?.Section6Title}}</h5>
+                                    <span [innerHTML]="page?.Section6Content"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Intro End -->
+
+    <section class="section-full bg-img-fix p0 content-inner-2 overlay-bg-blue contact-action style2" style="background-image:url(assets/images/bg2.jpg);">
+        <div class="container">
+            <div class="row relative">
+                <div class="col-md-12 col-lg-8 animation register-now animated fadeInLeft" data-animation="fadeInLeft" data-animation-delay="0.05s" style="animation-delay: 0.05s; opacity: 1;">
+                    <div class="contact-no-area">
+                        <h2 class="title">{{'NEW_STUDENT_REGISTRATION_HEAD' | translate}}<br>
+                        <span style="font-size:20px">{{'NEW_STUDENT_REGISTRATION_NOTE' | translate}}</span></h2>
+                        <form action="" method="post" class="dzSubscribe subscribe-box row align-items-center sp15">
+                            <div class="col-lg-12">
+                                <div class="dzSubscribeMsg"></div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="input-group">
+                                    <input name="dzName" required="required" type="text" class="form-control" placeholder="{{'YOUR_NAME' | translate}} ">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="input-group">
+                                    <input name="dzEmail" required="required" type="email" class="form-control" placeholder="{{'YOUR_EMAIL' | translate}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="input-group">
+                                    <button name="submit" value="Submit" type="submit" class="btn btn-default text-center">{{'REGISTER' | translate}}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4 contact-img-bx animation animated fadeInRight" data-animation="fadeInRight" data-animation-delay="0.05s" style="animation-delay: 0.05s; opacity: 1;">
+                    <img src="assets/images/pic1.png" alt="">	
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Start -->
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                        <div class="heading_s1 text-center">
+                            <h2 class="text-center">{{'UPCOMING_EVENTS_HEAD' | translate}}</h2>
+                        </div>
+                        <p class="text-center">{{'UPCOMING_EVENTS_NOTE' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row event_list justify-content-center">
+                <div class="col-lg-4">
+                    <div class="content_box event_box box_shadow1 mb-4 mb-lg-0">
+                        <div  style="width:350px; margin-top:auto; margin-left:auto !important; margin-right:auto !important; padding: 15px; border-bottom: solid 1px #eee;">
+                            <!-- <img src="assets/images/calendar.jpg" alt="school calendar" style="width:320px; height:310px;"/> -->
+                            <!-- <h4>School Calendar</h4> -->
+                            <mat-card class="demo-inline-calendar-card">
+                                <!-- <mat-calendar (selectedChange)="onSelect = $event"></mat-calendar> -->
+                                <mat-calendar #eventCalendar [dateClass]="dateClass()" (selectedChange)="onSelect($event)"></mat-calendar>
+                            </mat-card>
+                        </div>
+                        <div class="event_date next-event">
+                            <h5 class="text-center"><span class="text-center">{{nextEvent?.Date | customdate: "date"}}</span> {{nextEvent?.Date | customdate: "month"}}</h5>
+                            <span class="event_time bg_default text-center">{{nextEvent?.Date | customdate: "year"}}</span>
+                            </div>
+                        <div class="content_desc bg-white">
+                            <h4 class="content_title"><a routerLink="{{'/' + linkPrefix + '/events/' + nextEvent?.Id + '/' + nextEvent?.Slug}}">{{nextEvent?.Title?.substring(0, 20)}}...</a></h4>
+                            <p>{{nextEvent?.Description?.substring(0, 70)}}...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div *ngFor="let event of upcomingEvents" class="content_box event_box box_shadow1 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                                <div class="event_date">
+                                        <h5 class="text-center"><span class="text-center">{{event.Date | customdate: "date"}}</span> {{event.Date | customdate: "month"}}</h5>
+                                        <span class="event_time bg_default text-center">{{event.Date | customdate: "year"}}</span>
+                                    </div>
+                                <div class="content_desc bg-white">	
+                                    <h4 class="content_title"><a routerLink="{{'/' + linkPrefix + '/events/' + event.Id + '/' + event.Slug}}">{{event.Title}}</a></h4>
+                                    <p>{{event.Description}}</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Events End -->
+
+    <app-footer></app-footer>
+</div>
+

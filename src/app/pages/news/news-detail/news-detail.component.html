@@ -1,0 +1,63 @@
+<div id="root">
+    <app-header-menu></app-header-menu>
+
+    <app-breadcrumb-header [breadcrumb]="breadcrumb" [background]="news?.Picture"></app-breadcrumb-header>
+
+    <!-- START SECTION NEWS -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="single_post">
+                        <div class="blog_img">
+                            <a href="#">
+                                <img src="{{news?.Picture}}" alt="{{news?.Title}}">
+                            </a>
+                        </div>
+                        <div class="single_post_content">
+                            <div class="blog_text">
+                                <h3>{{news?.Title}}</h3>
+                                <ul class="list_none blog_meta">
+                                    <li><a href="#"><i class="ion-calendar"></i>
+                                        {{news?.Date | customdate: "date"}} 
+                                        {{news?.Date | customdate: "month"}}, 
+                                        {{news?.Date | customdate: "year"}}
+                                    </a></li>
+                                </ul>
+                                <span [innerHTML]="news?.Detail"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mt-lg-0 mt-4 pt-3 pt-lg-0">
+                    <div class="sidebar">
+                        <div class="widget widget_recent_post">
+                            <h5 class="widget_title">Latest News</h5>
+                            <ul class="recent_post border_bottom_dash list_none">
+                                <li *ngFor="let news of sideNav">
+                                    <div class="post_footer">
+                                        <div class="post_img">
+                                            <a routerLink="{{'/' + linkPrefix + '/news/' + news.Id + '/' + news.Slug}}"><img src="{{news?.Picture}}" alt="{{news?.Title}}"></a>
+                                        </div>
+                                        <div class="post_content">
+                                            <h6><a routerLink="{{'/' + linkPrefix + '/news/' + news.Id + '/' + news.Slug}}">{{news?.Title}}</a></h6>
+                                            <span class="post_date">
+                                                {{news?.Date | customdate: "date"}} 
+                                                {{news?.Date | customdate: "month"}}, 
+                                                {{news?.Date | customdate: "year"}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION NEWS -->
+
+    <app-footer></app-footer>
+</div>
+

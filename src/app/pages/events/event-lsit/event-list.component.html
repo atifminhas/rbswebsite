@@ -1,0 +1,54 @@
+<div id="root">
+    <app-header-menu></app-header-menu>
+
+    <app-breadcrumb-header [breadcrumb]="breadcrumb" [background]="bannerPicture"></app-breadcrumb-header>
+
+    <!-- START SECTION NEWS -->
+    <section class="small_pt">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div *ngFor="let event of eventsList" class="col-lg-4 col-md-6">
+                    <div class="blog_post box_shadow1 radius_all_10 animation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                        <div class="blog_img radius_ltrt_10">
+                            <a routerLink="{{'/' + linkPrefix + '/events/' + event.Id + '/' + event.Slug}}">
+                                <img src="{{event.Picture}}" alt="{{event.Title}}">
+                                <div class="event_date radius_all_5">
+                                    <h5><span>{{event.Date | customdate: "date"}}</span> {{event.Date | customdate: "month"}}</h5>
+                                    <span class="event_time radius_lbrb_5 bg_default">{{event.Time}}</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="content_desc">
+                            <h4 class="content_title">
+                                <a routerLink="{{'/' + linkPrefix + '/events/' + event.Id + '/' + event.Slug}}">{{event.Title}}</a>
+                            </h4>
+                            <ul class="list_none content_meta">
+                                <li><i class="ti-location-pin"></i><span class="text_default">{{event.Location}}</span></li>
+                            </ul>
+                            <p>{{event.Description}}</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-12">
+                    <div class="medium_divider"></div>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"><i class="ion-ios-arrow-thin-left"></i></a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="ion-ios-arrow-thin-right"></i></a></li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <!-- END SECTION NEWS -->
+
+    <app-footer></app-footer>
+</div>
+

@@ -1,0 +1,87 @@
+<!-- START FOOTER -->
+<footer class="bg-theme footer_dark">
+    <div class="top_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-8 mb-4 mb-lg-0">
+                    <h6 class="widget_title">{{'ABOUT_US' | translate}}</h6>
+                    <p>{{getResource('content.about_us')}}</p>
+                    <ul class="contact_info contact_info_light list_none">
+                        <li>
+                            <i class="fa fa-map-marker-alt "></i>
+                            <address>{{getResource('content.location_address')}}</address>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:{{getResource('content.email')}}">{{getResource('content.email')}}</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-mobile-alt"></i>
+                            <p>{{getResource('content.contact_no')}}</p>
+                        </li>
+                        <li class="social-media-icons" style="border-top:solid 1px #2a4fb0; padding-top:12px;">
+                            <a *ngIf="getResource('content.facebook') != ''" href="{{getResource('content.facebook')}}"> <i class="ion-social-facebook"></i></a>
+                            <a *ngIf="getResource('content.twitter') != ''" href="{{getResource('content.twitter')}}"> <i class="ion-social-twitter"></i></a>
+                            <a *ngIf="getResource('content.google_plus') != ''" href="{{getResource('content.google_plus')}}"> <i class="ion-social-googleplus"></i></a>
+                            <a *ngIf="getResource('content.youtube') != ''" href="{{getResource('content.youtube')}}"> <i class="ion-social-youtube-outline"></i></a>
+                            <a *ngIf="getResource('content.instagram') != ''" href="{{getResource('content.instagram')}}"> <i class="ion-social-instagram-outline"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 col-sm-4 mb-4 mb-lg-0">
+                    <h6 class="widget_title">{{'USEFUL_LINKS' | translate}}</h6>
+                    <div class="row">
+                        <div class="col-sm-6 list_none widget_links links_style1"
+                        *ngFor="let menu of contentPageService.navigationMenuBtm | async">
+                            <li>
+                            <!--Internal Dynamic Page-->
+                            <a *ngIf="menu.TypeId == 10" routerLink="{{'/' + linkPrefix + '/pages/' + menu.Id + '/' + menu.Slug}}" data-toggle="dropdown">{{menu.MenuTitle}}</a>
+                            <!--Internal Static Page-->
+                            <a *ngIf="menu.TypeId == 20" routerLink="{{'/' + linkPrefix + '/' + menu.Slug}}" data-toggle="dropdown">{{menu.MenuTitle}}</a>
+                            <!--External Page-->
+                            <a *ngIf="menu.TypeId == 30" href="{{menu.Slug}}" target="_blank" data-toggle="dropdown">{{menu.MenuTitle}}</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="widget_title">{{'LATEST_NEWS' | translate}}</h6>
+                    <ul class="recent_post border_bottom_dash list_none">
+                        <li *ngFor="let news of latestNews">
+                            <div class="post_footer">
+                                <div class="post_img">
+                                    <a routerLink="{{'/' + linkPrefix + '/news/' + news.Id + '/' + news.Slug}}"><img src="{{news?.Picture}}" alt="{{news?.Title}}"></a>
+                                </div>
+                                <div class="post_content">
+                                    <h6><a routerLink="{{'/' + linkPrefix + '/news/' + news.Id + '/' + news.Slug}}">{{news?.Title}}</a></h6>
+                                    <span class="post_date">
+                                        {{news?.Date | customdate: "date"}} 
+                                        {{news?.Date | customdate: "month"}}, 
+                                        {{news?.Date | customdate: "year"}}
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <a class="view-all-news" routerLink="{{'/' + linkPrefix + '/news'}}">{{'VIEW_ALL_NEWS' | translate}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_footer bg_default">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="copyright m-md-0 text-center text-md-left">© {{copyrightYear}} {{'COPYRIGHT_STATEMENT' | translate}}</p>
+                </div>
+                <div class="col-md-6">
+                    <!-- <ul class="list_none footer_link text-center text-md-right">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER -->

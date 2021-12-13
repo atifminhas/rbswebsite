@@ -1,0 +1,13 @@
+.carousel, .carousel .carousel-list, .carousel .carousel-list .carousel-slide,
+.carousel .carousel-list .carousel-slide li, .carousel .carousel-list .carousel-slide li .carousel-slide,
+.carousel .carousel-list .carousel-slide li .carousel-slide .carousel-slide-content,
+.carousel .carousel-list .carousel-slide li .carousel-slide .carousel-slide-content .banner_slide_content {
+    min-height: 100vh !important;
+}
+
+.rtl_layout .banner_section, .rtl_layout .banner_section * {
+    direction: ltr !important;
+}
+.rtl_layout .text-center, .rtl_layout .text-center * {
+    text-align: center !important;
+}

@@ -1,0 +1,40 @@
+<div id="root">
+    <app-header-menu></app-header-menu>
+
+    <app-breadcrumb-header [breadcrumb]="breadcrumb" [background]="page?.Picture"></app-breadcrumb-header>
+
+    <!-- START SECTION NEWS -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="single_post">
+                        <!--
+                        <div class="blog_img">
+                            <a href="#">
+                                <img src="assets/images/blog_img1.jpg" alt="blog_img1">
+                            </a>
+                        </div>
+                        -->
+                        <div class="single_post_content">
+                            <div class="blog_text">
+                                <h3>{{page?.Title}}</h3>
+                                <br>
+                                <div class="page-content" [innerHTML]="page?.Content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 mt-lg-0 mt-4 pt-3 pt-lg-0">
+                    <app-sidebar [nav]="sideNav"></app-sidebar>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION NEWS -->
+
+    <app-footer></app-footer>
+</div>
+
