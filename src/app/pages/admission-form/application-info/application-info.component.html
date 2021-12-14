@@ -50,13 +50,17 @@
                                     <div class="text-center">
                                         <div class="row">
                                             <div class="col-6 offset-lg-3">
-                                                <mat-label>Who is submitting the admission application? <span class="compulsory">*</span></mat-label>
-                                                <mat-select class="form-control">
+                                                <mat-label>Who is submitting the admission application? 
+                                                    
+                                                <span class="compulsory" *ngIf="who.invalid">(Required)</span>
+                                            
+                                                </mat-label>
+                                                <mat-select class="form-control" [(ngModel)]="whodata" id="who" name="who" #who="ngModel" ngModel required>
                                                     <mat-option [value]='1'>Father</mat-option>
                                                     <mat-option [value]='2'>Mother</mat-option>
                                                     <mat-option [value]='3'>Guardian</mat-option>
                                                 </mat-select>
-                                                <button class="btn btn-default btn-sm" (click)="btnApplicationInfoNext()" type="button">Next</button>
+                                                <button class="btn btn-default btn-sm" [disabled]="who.invalid" (click)="btnApplicationInfoNext()" type="button">Next</button>
                                             </div>
                                         </div>
                                     </div>

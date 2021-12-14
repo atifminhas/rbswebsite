@@ -29,6 +29,7 @@ export class AdmissionFormEmailAddressComponent implements OnInit {
   bannerPicture: String;
 
   isValidEmail = false;
+  emaildata: string;
 
   constructor(
     private languageService: LanguageService,
@@ -51,10 +52,12 @@ export class AdmissionFormEmailAddressComponent implements OnInit {
   }
 
   btnEmailVerify(){   
+    
     this.router.navigate([this.linkPrefix+ '/admission-form/mobile-number']);
   }
 
   btnEmailNext(){
+    console.log(this.emaildata);
     this.isValidEmail = true;
   }
 }

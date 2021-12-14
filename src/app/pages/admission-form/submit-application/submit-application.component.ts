@@ -46,12 +46,16 @@ export class AdmissionFormSubmitApplicationComponent implements OnInit {
     this.breadcrumb = breadcrumb;
   }
 
-  btnSubmitApplicationNext(){
-    this.movedFromNext = true;
+  submitReason(data){
+      console.log(data);
+      this.movedFromNext = true;
   }
-  btnSubmitApplication(){
+
+  submitKnownUsForm(data){
+    console.log(data);
     this.applicationSubmitted = true;
   }
+
   okSubmitted(){    
     this.router.navigate([this.linkPrefix+ '/home']);
   }

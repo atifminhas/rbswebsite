@@ -30,6 +30,7 @@ export class AdmissionFormApplicationInfoComponent implements OnInit {
 
   schoolYear: string;
   isSchoolYearSelected = false;
+  whodata: number;
 
   constructor(
     private languageService: LanguageService,
@@ -58,6 +59,7 @@ export class AdmissionFormApplicationInfoComponent implements OnInit {
   }
 
   btnApplicationInfoNext(){
+    console.log(this.whodata);
     this.router.navigate([this.linkPrefix+ '/admission-form/email-address']);
   }
 

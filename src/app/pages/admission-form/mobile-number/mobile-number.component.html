@@ -19,7 +19,7 @@
             </div>
 
             <!-- MOBILE NUMBER -->
-            <div class="row">
+            <div class="row" *ngIf=!isValidMobile>
                 <div class="col-12">
                     <div class="box_shadow1 radius_all_10">
                         <div class="row no-gutters">
@@ -28,9 +28,11 @@
                                     <div class="text-center">
                                         <div class="row">
                                             <div class="col-6 offset-lg-3">
-                                                <mat-label>Enter your mobile number <span class="compulsory">*</span></mat-label>
-                                                <input type="text" matInput autocomplete="off" class="form-control">
-                                                <button class="btn btn-default btn-sm" (click)=btnMobileNext() type="button">Next</button>
+                                                <mat-label>Enter your mobile number 
+                                                <span class="compulsory" *ngIf="mobile.invalid">(Required)</span>
+                                                </mat-label>
+                                                <input type="text" oninput="this.value=this.value.replace(/[^\d]/,'')" minlength="8" maxlength="8" [(ngModel)]="mobiledata" #mobile="ngModel" name="mobile"  required ngModel matInput autocomplete="off" class="form-control">
+                                                <button class="btn btn-default btn-sm" [disabled]="mobile.invalid" (click)=btnMobileNext() type="button">Next</button>
                                             </div>
                                         </div>
                                     </div>

@@ -27,6 +27,7 @@ export class AdmissionFormMobileNumberComponent implements OnInit {
 
   breadcrumb: String[];
   bannerPicture: String;
+  mobiledata: string;
 
   isValidMobile = false;
 
@@ -55,6 +56,7 @@ export class AdmissionFormMobileNumberComponent implements OnInit {
   }
 
   btnMobileNext(){
+    console.log(this.mobiledata);
     this.isValidMobile = true;
   }
 }

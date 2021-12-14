@@ -19,7 +19,7 @@
             </div>
 
             <!-- EMAIL ADDRESS -->
-            <div class="row">
+            <div class="row" *ngIf=!isValidEmail>
                 <div class="col-12">
                     <div class="box_shadow1 radius_all_10">
                         <div class="row no-gutters">
@@ -28,9 +28,15 @@
                                     <div class="text-center">
                                         <div class="row">
                                             <div class="col-6 offset-lg-3">
-                                                <mat-label>Enter your email address <span class="compulsory">*</span></mat-label>
-                                                <input type="text" matInput autocomplete="off" class="form-control">
-                                                <button class="btn btn-default btn-sm" (click)=btnEmailNext() type="button">Next</button>
+                                                <mat-label>Enter your email address 
+                                                <span *ngIf="email.untouched || email.value==''" class="error">(required)</span>
+                                            
+                                                </mat-label>
+                                                
+                                                <input type="text" [(ngModel)]="emaildata" #email="ngModel" name="email" email  required ngModel matInput autocomplete="off" class="form-control">                                                
+                                                <span class="error" *ngIf="email.touched && email.invalid && email.value != ''">Email address not valid</span>
+                                                <br>
+                                                <button class="btn btn-default btn-sm" [disabled]="email.invalid" (click)=btnEmailNext() type="button">Next</button>
                                             </div>
                                         </div>
                                     </div>
@@ -55,7 +61,7 @@
                                         <div class="row">
                                             <div class="col-6 offset-lg-3">
                                                 <mat-label>Enter the 4 digit code sent on your email address <span class="compulsory">*</span></mat-label>
-                                                <input type="text" matInput autocomplete="off" class="form-control">
+                                                <input type="text" email matInput autocomplete="off" class="form-control">
                                                 <button class="btn btn-default btn-sm" (click)=btnEmailVerify() type="button">Verify</button>&nbsp;
                                                 <button class="btn btn-default btn-sm" type="button">Resend Code</button>
                                             </div>

@@ -24,32 +24,33 @@
                     <div class="box_shadow1 radius_all_10">
                         <!-- <div class="row no-gutters"> -->
                             <div class="form-padding">
-                                <form #reasonForm="ngForm" >
+                                <form #reasonForm="ngForm" (ngSubmit)="submitReason(reasonForm.value)">
                                     <h5>Please mention the reasons of joining Al Ru'ya Bilingual School</h5>
-                                    <br>
-                                    <span class="error" *ngIf="!academic.checked && !location.checked && !education.checked && !other.checked && !reasonForm.touched">One reason required</span>
+                                    <br>                                   
+                                    <span class="error" *ngIf="!academic.checked && !location.checked && !education.checked && !other.checked">One reason required</span>
                                     <div class="col-9">
-                                        <mat-checkbox id="academic" name="academic" #academic color="primary">Academic</mat-checkbox>                                                                        
+                                        <mat-checkbox id="academic" name="academic" #academic color="primary" ngModel>Academic</mat-checkbox>                                                                        
                                     </div>
                                     <div class="col-9">
-                                        <mat-checkbox id="location" name="location" #location color="primary">Location</mat-checkbox>  
+                                        <mat-checkbox id="location" name="location" #location color="primary" ngModel>Location</mat-checkbox>  
                                     </div>                                                                                                     
                                     <div class="col-9">
-                                        <mat-checkbox id="education" name="education" #education color="primary">Educational</mat-checkbox>                                                                        
+                                        <mat-checkbox id="education" name="education" #education color="primary" ngModel>Educational</mat-checkbox>                                                                        
                                     </div>
                                     <div class="col-9">
-                                        <mat-checkbox id="other" name="other" #other (change)="otherSelected(other.checked)" color="primary" >Other</mat-checkbox>   
+                                        <mat-checkbox id="other" name="other" #other (change)="otherSelected(other.checked)" color="primary" ngModel>Other</mat-checkbox>   
                                     </div>                                                                                                     
                                     <div class="col-9" >
                                         <input type="text" id="txtOther" name="txtOther" [(ngModel)]="otherdata" #txtOther="ngModel" ngModel matInput autocomplete="off" [required]=other.checked class="form-control" [disabled]=!other.checked >                                         
-                                        <span class="error" *ngIf="txtOther.invalid && txtOther.touched">Required</span>
+                                        <span class="error" *ngIf="txtOther.invalid">Required</span>
                                         
                                     </div>                                                                                                                                                     
-                                </form>
+                                
 
                                 <div class="col-12 text-center">
-                                    <button class="btn btn-default btn-sm" (click)="btnSubmitApplicationNext()" type="button">Next</button>
+                                    <button class="btn btn-default btn-sm" [disabled]="!reasonForm.valid || (!academic.checked && !location.checked && !education.checked && !other.checked)" type="submit">Next</button>
                                 </div>
+                            </form>
                         </div>
                         <!-- </div> -->
                     </div>
@@ -60,32 +61,34 @@
                     <div class="box_shadow1 radius_all_10">
                         <!-- <div class="row no-gutters"> -->
                             <div class="form-padding">
-                                <form #knowusForm="ngForm" >
+                                <form #knowusForm="ngForm" (ngSubmit)="submitKnownUsForm(knowusForm.value)">
                                     <h5>Please mention the reasons of joining Al Ru'ya Bilingual School</h5>
                                     <br>
-                                    <span class="error" *ngIf="!relatives.checked && !friends.checked && !media.checked && !other2.checked && !knowusForm.touched">One reason required</span>
+                                    <span class="error" *ngIf="!relatives.checked && !friends.checked && !media.checked && !other2.checked">One reason required</span>
                                     <div class="col-9">
-                                        <mat-checkbox id="relatives" name="relatives" #relatives color="primary">Relatives</mat-checkbox>                                                                        
+                                        <mat-checkbox id="relatives" name="relatives" #relatives color="primary" ngModel>Relatives</mat-checkbox>                                                                        
                                     </div>
                                     <div class="col-9">
-                                        <mat-checkbox id="friends" name="friends" #friends color="primary">Friends</mat-checkbox>  
+                                        <mat-checkbox id="friends" name="friends" #friends color="primary" ngModel>Friends</mat-checkbox>  
                                     </div>                                                                                                     
                                     <div class="col-9">
-                                        <mat-checkbox id="media" name="media" #media color="primary">Media</mat-checkbox>                                                                        
+                                        <mat-checkbox id="media" name="media" #media color="primary" ngModel>Media</mat-checkbox>                                                                        
                                     </div>
                                     <div class="col-9">
-                                        <mat-checkbox id="other2" name="other2" #other2 (change)="otherSelected2(other2.checked)" color="primary" >Other</mat-checkbox>   
+                                        <mat-checkbox id="other2" name="other2" #other2 (change)="otherSelected2(other2.checked)" color="primary" ngModel >Other</mat-checkbox>   
                                     </div>                                                                                                     
                                     <div class="col-9" >
                                         <input type="text" id="txtOther2" name="txtOther2" [(ngModel)]="otherdata2" #txtOther2="ngModel" ngModel matInput autocomplete="off" [required]=other2.checked class="form-control" [disabled]=!other2.checked >                                         
-                                        <span class="error" *ngIf="txtOther2.invalid && txtOther2.touched">Required</span>
+                                        <span class="error" *ngIf="txtOther2.invalid">Required</span>
                                         
-                                    </div>                                                                                                                                                     
+                                    </div>   
+                                    
+                                    <div class="col-12 text-center">
+                                        <button class="btn btn-default btn-sm"  [disabled]="!knowusForm.valid || (!relatives.checked && !friends.checked && !media.checked && !other2.checked)" type="submit">Submit the Application</button>
+                                    </div>
                                 </form>
 
-                                <div class="col-12 text-center">
-                                    <button class="btn btn-default btn-sm" (click)="btnSubmitApplication()" type="button">Submit the Application</button>
-                                </div>
+                              
                         </div>
                         <!-- </div> -->
                     </div>
