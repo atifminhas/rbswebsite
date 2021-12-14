@@ -1,0 +1,117 @@
+<div id="root">
+    <app-header-menu></app-header-menu>
+
+    <app-breadcrumb-header [breadcrumb]="breadcrumb" [background]="bannerPicture"></app-breadcrumb-header>
+
+    <!-- START SECTION ADMISSION FORM -->
+    <section class="small_pb">
+        <div class="container">	
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="text-center animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.01s" style="animation-delay: 0.01s; opacity: 1;">
+                        <div class="heading_s1 text-center">
+                            <h2 class=" text-center">Admission Form</h2>
+                        </div>
+                        <div class=" text-center"></div>
+                        <div class="small_divider"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SELECT SCHOOL YEAR-->
+            <div class="row" *ngIf="!movedFromNext">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <!-- <div class="row no-gutters"> -->
+                            <div class="form-padding">
+                                <form #reasonForm="ngForm" >
+                                    <h5>Please mention the reasons of joining Al Ru'ya Bilingual School</h5>
+                                    <br>
+                                    <span class="error" *ngIf="!academic.checked && !location.checked && !education.checked && !other.checked && !reasonForm.touched">One reason required</span>
+                                    <div class="col-9">
+                                        <mat-checkbox id="academic" name="academic" #academic color="primary">Academic</mat-checkbox>                                                                        
+                                    </div>
+                                    <div class="col-9">
+                                        <mat-checkbox id="location" name="location" #location color="primary">Location</mat-checkbox>  
+                                    </div>                                                                                                     
+                                    <div class="col-9">
+                                        <mat-checkbox id="education" name="education" #education color="primary">Educational</mat-checkbox>                                                                        
+                                    </div>
+                                    <div class="col-9">
+                                        <mat-checkbox id="other" name="other" #other (change)="otherSelected(other.checked)" color="primary" >Other</mat-checkbox>   
+                                    </div>                                                                                                     
+                                    <div class="col-9" >
+                                        <input type="text" id="txtOther" name="txtOther" [(ngModel)]="otherdata" #txtOther="ngModel" ngModel matInput autocomplete="off" [required]=other.checked class="form-control" [disabled]=!other.checked >                                         
+                                        <span class="error" *ngIf="txtOther.invalid && txtOther.touched">Required</span>
+                                        
+                                    </div>                                                                                                                                                     
+                                </form>
+
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-default btn-sm" (click)="btnSubmitApplicationNext()" type="button">Next</button>
+                                </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                </div>               
+            </div>            
+            <div class="row" *ngIf="movedFromNext && !applicationSubmitted">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <!-- <div class="row no-gutters"> -->
+                            <div class="form-padding">
+                                <form #knowusForm="ngForm" >
+                                    <h5>Please mention the reasons of joining Al Ru'ya Bilingual School</h5>
+                                    <br>
+                                    <span class="error" *ngIf="!relatives.checked && !friends.checked && !media.checked && !other2.checked && !knowusForm.touched">One reason required</span>
+                                    <div class="col-9">
+                                        <mat-checkbox id="relatives" name="relatives" #relatives color="primary">Relatives</mat-checkbox>                                                                        
+                                    </div>
+                                    <div class="col-9">
+                                        <mat-checkbox id="friends" name="friends" #friends color="primary">Friends</mat-checkbox>  
+                                    </div>                                                                                                     
+                                    <div class="col-9">
+                                        <mat-checkbox id="media" name="media" #media color="primary">Media</mat-checkbox>                                                                        
+                                    </div>
+                                    <div class="col-9">
+                                        <mat-checkbox id="other2" name="other2" #other2 (change)="otherSelected2(other2.checked)" color="primary" >Other</mat-checkbox>   
+                                    </div>                                                                                                     
+                                    <div class="col-9" >
+                                        <input type="text" id="txtOther2" name="txtOther2" [(ngModel)]="otherdata2" #txtOther2="ngModel" ngModel matInput autocomplete="off" [required]=other2.checked class="form-control" [disabled]=!other2.checked >                                         
+                                        <span class="error" *ngIf="txtOther2.invalid && txtOther2.touched">Required</span>
+                                        
+                                    </div>                                                                                                                                                     
+                                </form>
+
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-default btn-sm" (click)="btnSubmitApplication()" type="button">Submit the Application</button>
+                                </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                </div>               
+            </div>
+
+            <div class="row" *ngIf="applicationSubmitted">
+                <div class="col-12">
+                    <div class="box_shadow1 radius_all_10">
+                        <!-- <div class="row no-gutters"> -->
+                            <div class="form-padding">                                
+                                <div class="col-12 text-center">
+                                    <h4>Thank you Message</h4>
+                                    <button class="btn btn-default btn-sm" (click)="okSubmitted()" type="button">Ok</button>
+                                </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                </div>               
+            </div>
+            <br>
+            
+        </div>
+    </section>
+    <!-- END SECTION ADMISSION FORM -->
+    
+    <app-footer></app-footer>
+</div>
+

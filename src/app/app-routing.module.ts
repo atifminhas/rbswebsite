@@ -22,6 +22,7 @@ import { AdmissionFormMotherDetailsComponent } from './pages/admission-form/moth
 import { AdmissionFormStudentDetailsComponent } from './pages/admission-form/student-details/student-details.component';
 import { AdmissionFormAskRelativeComponent } from './pages/admission-form/ask-relative/ask-relative.component';
 import { AdmissionFormAskAnotherStudentComponent } from './pages/admission-form/ask-another-student/ask-another-student.component';
+import { AdmissionFormSubmitApplicationComponent } from './pages/admission-form/submit-application/submit-application.component';
 
 export function ComplexUrlMatcher(paramName: string, regex: RegExp) {
   return (
@@ -202,6 +203,10 @@ const routes: Routes = [
       {
         path: 'admission-form/ask-another-student',
         component: AdmissionFormAskAnotherStudentComponent,
+      },
+      {
+        path: 'admission-form/submit-application',
+        component: AdmissionFormSubmitApplicationComponent,
       },
     ]
   },

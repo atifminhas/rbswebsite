@@ -24,6 +24,7 @@ import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { MatCardModule } from '@angular/material/card';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { CurencyPipe } from '../pipes/curency/curency.pipe';
 import { StripHtmlPipe } from '../pipes/striphtml/striphtml.pipe';
@@ -55,6 +56,7 @@ import { AdmissionFormMotherDetailsComponent } from './admission-form/mother-det
 import { AdmissionFormStudentDetailsComponent } from './admission-form/student-details/student-details.component';
 import { AdmissionFormAskRelativeComponent } from './admission-form/ask-relative/ask-relative.component';
 import { AdmissionFormAskAnotherStudentComponent } from './admission-form/ask-another-student/ask-another-student.component';
+import { AdmissionFormSubmitApplicationComponent } from './admission-form/submit-application/submit-application.component';
 
 @NgModule({
   declarations: [
@@ -83,9 +85,10 @@ import { AdmissionFormAskAnotherStudentComponent } from './admission-form/ask-an
     AdmissionFormStudentDetailsComponent,
     AdmissionFormAskRelativeComponent,
     AdmissionFormAskAnotherStudentComponent,
+    AdmissionFormSubmitApplicationComponent,
     CurencyPipe,
     StripHtmlPipe,
-    CustomDatePipe,            
+    CustomDatePipe,                
     ],
   imports: [
     CommonModule,
@@ -111,6 +114,7 @@ import { AdmissionFormAskAnotherStudentComponent } from './admission-form/ask-an
     MatDatepickerModule,
     MatMomentDateModule,
     MatCardModule,
+    MatCheckboxModule,
     MatCarouselModule.forRoot()
   ],
   exports: [
