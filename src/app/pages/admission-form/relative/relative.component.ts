@@ -16,12 +16,13 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   }
 }
 
+
 @Component({
-  selector: 'app-admission-form-mother-details',
-  templateUrl: './mother-details.component.html',
-  styleUrls: ['./mother-details.component.scss']
+  selector: 'admission-form-app-relative',
+  templateUrl: './relative.component.html',
+  styleUrls: ['./relative.component.scss']
 })
-export class AdmissionFormMotherDetailsComponent implements OnInit {
+export class AdmissionFormRelativeComponent implements OnInit {
 
   linkPrefix:string = 'en';
 
@@ -30,6 +31,7 @@ export class AdmissionFormMotherDetailsComponent implements OnInit {
 
   //model can move later to models  folder
   civilid: string;
+  relationshiptype: number;
   nationalitycategory: number;
   nationality: number;
   maritalstatus: number;
@@ -51,27 +53,29 @@ export class AdmissionFormMotherDetailsComponent implements OnInit {
 
   submitted = false;
 
+
   constructor(
     private router: Router, 
     private languageService: LanguageService,
     public contentPageService: ContentPageService
-  ) { this.getBreadcrumb();}
+  ) {this.getBreadcrumb(); }
 
   ngOnInit(): void {
     this.linkPrefix = this.languageService.currentLanguage;
   }
-  
+
   getBreadcrumb() {
     var breadcrumb: String[] = [];
     breadcrumb.push("Home");
     breadcrumb.push("Admission Form");
     this.breadcrumb = breadcrumb;
   }
-
-  btnMotherDetailsNext(valid: boolean){
+  
+  btnRelativeDetailsNext(valid: boolean){
     this.submitted = true;
     
     if(valid)
-      this.router.navigate([this.linkPrefix+ '/admission-form/ask-relative']);
+      this.router.navigate([this.linkPrefix+ '/admission-form/ask-student']);
   }
+
 }

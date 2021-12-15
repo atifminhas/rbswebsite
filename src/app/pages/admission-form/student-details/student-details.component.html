@@ -18,176 +18,306 @@
                 </div>
             </div>
 
-            <!-- STUDENT DETAILS -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="box_shadow1 radius_all_10">
-                        <div class="row no-gutters">
-                            <div class="col-md-12">
-                                <div class="form-padding">
-                                    <h4>Student Details</h4><br>                                    
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <mat-label>Civil ID <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+            <!-- STUDENT DETAILS SECTION-->
+            <form #studentDetails="ngForm" (ngSubmit)="btnStudentDetailsNext(studentDetails.valid)" >
+                <div class="row">
+                    <div class="col-12">
+                        <div class="box_shadow1 radius_all_10">
+                            <div class="row no-gutters">
+                                <div class="col-md-12">
+                                    <div class="form-padding">
+                                        <h4>Student Details</h4>                                   
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Civil ID<span class="compulsory">*</span> </mat-label>                                                                                                                                                                              
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="txtcivilid" name="txtcivilid" #txtcivilid="ngModel" [(ngModel)]="civilid" ngModel oninput="this.value=this.value.replace(/[^\d]/,'')" minlength="12" maxlength="12"  required  matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtcivilid.touched) && txtcivilid.errors?.required" class="error">required</span>
+                                                    <span *ngIf="txtcivilid.errors?.minlength || txtcivilid.errors?.maxlength" class="error">
+                                                        Must be 12 Characters
+                                                    </span> 
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Civil ID Serial Number<span class="compulsory">*</span> </mat-label>                                                                                                                                                                              
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <input type="text" id="txtcivilidserialnumber" name="txtcivilidserialnumber" #txtcivilidserialnumber="ngModel" [(ngModel)]="civilidserialnumber" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtcivilidserialnumber.touched) && txtcivilidserialnumber.errors?.required" class="error">required</span>
+                                            </div >
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Civil ID Serial Number <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>First Name (Arabic)<span class="compulsory">*</span> </mat-label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="txtFirstNameAr" name="txtFirstNameAr" #txtFirstNameAr="ngModel" [(ngModel)]="firstnamear" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtFirstNameAr.touched) && txtFirstNameAr.errors?.required" class="error">required</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Second Name (Arabic)<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="txtSecondNameAr" name="txtSecondNameAr" #txtSecondNameAr="ngModel" [(ngModel)]="secondnamear" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtSecondNameAr.touched) && txtSecondNameAr.errors?.required" class="error">required</span>
+                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Nationality Category <span class="compulsory">*</span></mat-label>
-                                            <mat-select class="form-control">
-                                                <mat-option [value]='1'>Kuwaiti</mat-option>
-                                                <mat-option [value]='2'>Non-Kuwaiti</mat-option>
-                                            </mat-select>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Third Name (Arabic)<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="txtThirdNameAr" name="txtThirdNameAr" #txtThirdNameAr="ngModel" [(ngModel)]="thirdnamear" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtThirdNameAr.touched) && txtThirdNameAr.errors?.required" class="error">required</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Fourth Name (Arabic)<span class="compulsory">*</span></mat-label>                                           
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="txtFourthNameAr" name="txtFourthNameAr" #txtFourthNameAr="ngModel" [(ngModel)]="fourthnamear" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtFourthNameAr.touched) && txtFourthNameAr.errors?.required" class="error">required</span>
+                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Nationality <span class="compulsory">*</span></mat-label>
-                                            <mat-select class="form-control">
-                                                <mat-option [value]='1'>Kuwait</mat-option>
-                                                <mat-option [value]='2'>Egypt</mat-option>
-                                                <mat-option [value]='2'>Jordan</mat-option>
-                                            </mat-select>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>First Name (English)<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="txtFirstNameEn" name="txtFirstNameEn" #txtFirstNameEn="ngModel" [(ngModel)]="firstnameen" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtFirstNameEn.touched) && txtFirstNameEn.errors?.required" class="error">(required)</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Second Name (English)<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="txtSecondNameEn" name="txtSecondNameEn" #txtSecondNameEn="ngModel" [(ngModel)]="secondnameen" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtSecondNameEn.touched) && txtSecondNameEn.errors?.required" class="error">(required)</span>
+                                            </div>
                                         </div>
-                                        
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <mat-label>First Name (Arabic) <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Third Name (English)<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="txtThirdNameEn" name="txtThirdNameEn" #txtThirdNameEn="ngModel" [(ngModel)]="thirdnameen" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtThirdNameEn.touched) && txtThirdNameEn.errors?.required" class="error">(required)</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Fourth Name (English)<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="txtFourthNameEn" name="txtFourthNameEn" #txtFourthNameEn="ngModel" [(ngModel)]="fourthnameen" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtFourthNameEn.touched) && txtFourthNameEn.errors?.required" class="error">(required)</span>
+                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Second Name (Arabic) <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Nationality Category<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <mat-select id="ddlnationalitycategory" name="ddlnationalitycategory" #ddlnationalitycategory="ngModel" [(ngModel)]="nationalitycategory" ngModel required class="form-control">
+                                                    <mat-option [value]='1'>Kuwaiti</mat-option>
+                                                    <mat-option [value]='2'>Non-Kuwaiti</mat-option>
+                                                </mat-select>
+                                                <span *ngIf="(submitted || ddlnationalitycategory.touched) && ddlnationalitycategory.errors?.required" class="error">(required)</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Nationality<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <mat-select id="ddlnationality" name="ddlnationality" #ddlnationality="ngModel"  [(ngModel)]="nationality" ngModel required class="form-control"  >
+                                                    <mat-option [value]='1'>Kuwait</mat-option>
+                                                    <mat-option [value]='2'>Egypt</mat-option>
+                                                    <mat-option [value]='2'>Jordan</mat-option>
+                                                </mat-select>
+                                                <span *ngIf="(submitted || ddlnationality.touched) && ddlnationality.errors?.required" class="error">(required)</span>
+                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Third Name (Arabic) <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Gender<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <mat-select id="ddlGender" name="ddlGender" #ddlGender="ngModel" [(ngModel)]="gender" ngModel required class="form-control" >
+                                                    <mat-option [value]='1'>Male</mat-option>
+                                                    <mat-option [value]='2'>Female</mat-option>                                                    
+                                                </mat-select>
+                                                <span *ngIf="(submitted || ddlGender.touched) && ddlGender.errors?.required" class="error">(required)</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Religion<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <mat-select id="ddlReligion" name="ddlReligion" #ddlReligion="ngModel" [(ngModel)]="religion" ngModel required class="form-control" >
+                                                    <mat-option [value]='1'>Muslim</mat-option>
+                                                    <mat-option [value]='2'>Christian</mat-option>                                                    
+                                                </mat-select>
+                                                <span *ngIf="(submitted || ddlReligion.touched) && ddlReligion.errors?.required" class="error">(required)</span>
+                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Fourth Name (Arabic) <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Passport Number<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <input type="text" id="txtPassportNumber" name="txtPassportNumber" #txtPassportNumber="ngModel" [(ngModel)]="passportnumber" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtPassportNumber.touched) && txtPassportNumber.errors?.required" class="error">(required)</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Civil ID Expiry Date<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <input type="date" id="txtCivilIDExpirtyDate" name="txtCivilIDExpirtyDate" #txtCivilIDExpirtyDate="ngModel" [(ngModel)]="civilidexpirydate" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtCivilIDExpirtyDate.touched) && txtCivilIDExpirtyDate.errors?.required" class="error">(required)</span>                                            
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <mat-label>First Name (English) <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Date of Birth<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <input type="date" id="txtDateOfBirth" name="txtDateOfBirth" #txtDateOfBirth="ngModel" [(ngModel)]="dateofbirth" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtDateOfBirth.touched) && txtDateOfBirth.errors?.required" class="error">(required)</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Birth Certificate Number<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <input type="text" id="txtBirthCertificateNumber" name="txtBirthCertificateNumber" #txtBirthCertificateNumber="ngModel" [(ngModel)]="birthcertificatenumber" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtBirthCertificateNumber.touched) && txtBirthCertificateNumber.errors?.required" class="error">(required)</span>                                            
+                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Second Name (English) <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Birth Certificate Issue Date<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <input type="date" id="txtBirthCertificateIssueDate" name="txtBirthCertificateIssueDate" #txtBirthCertificateIssueDate="ngModel" [(ngModel)]="birthcertificateissuedate" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtBirthCertificateIssueDate.touched) && txtBirthCertificateIssueDate.errors?.required" class="error">(required)</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Country of Birth<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <mat-select id="ddlCountryOfBirth" name="ddlCountryOfBirth" #ddlCountryOfBirth="ngModel" [(ngModel)]="countryofbirth" ngModel required class="form-control" >
+                                                    <mat-option [value]='1'>Kuwait</mat-option>
+                                                    <mat-option [value]='2'>Egypt</mat-option>                                                    
+                                                </mat-select>
+                                                <span *ngIf="(submitted || ddlCountryOfBirth.touched) && ddlCountryOfBirth.errors?.required" class="error">(required)</span>
+                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Third Name (English) <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Birth Certificate Issue Country<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <mat-select id="ddlBirthCertificateIssueCountry" name="ddlBirthCertificateIssueCountry" #ddlBirthCertificateIssueCountry="ngModel" [(ngModel)]="birthcertificateissuecountry" ngModel required class="form-control" >
+                                                    <mat-option [value]='1'>Kuwait</mat-option>
+                                                    <mat-option [value]='2'>Egypt</mat-option>                                                    
+                                                </mat-select>
+                                                <span *ngIf="(submitted || ddlBirthCertificateIssueCountry.touched) && ddlBirthCertificateIssueCountry.errors?.required" class="error">(required)</span>
+                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Fourth Name (English) <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Grade Applied For<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-10">                                            
+                                                <mat-select id="ddlGradeAppliedFor" name="ddlGradeAppliedFor" #ddlGradeAppliedFor="ngModel" [(ngModel)]="gradeappliedfor" ngModel required class="form-control" >
+                                                    <mat-option [value]='1'>1</mat-option>
+                                                    <mat-option [value]='2'>2</mat-option>                                                    
+                                                </mat-select>
+                                                <span *ngIf="(submitted || ddlGradeAppliedFor.touched) && ddlGradeAppliedFor.errors?.required" class="error">(required)</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <mat-label>Gender <span class="compulsory">*</span></mat-label>
-                                            <mat-select class="form-control">
-                                                <mat-option [value]='1'>Male</mat-option>
-                                                <mat-option [value]='2'>Female</mat-option>                                                
-                                            </mat-select>
+                                        <br>                                        
+                                        <h5>Address Details</h5>                                                                                
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Area<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <mat-select id="ddlArea" name="ddlArea" #ddlArea="ngModel" [(ngModel)]="area" ngModel required class="form-control" >
+                                                    <mat-option [value]='1'>Kuwait</mat-option>
+                                                    <mat-option [value]='2'>Salmiya</mat-option>                                                    
+                                                </mat-select>
+                                                <span *ngIf="(submitted || ddlArea.touched) && ddlArea.errors?.required" class="error">(required)</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Block<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <input type="text" id="txtBlock" name="txtBlock" #txtBlock="ngModel" [(ngModel)]="block" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtBlock.touched) && txtBlock.errors?.required" class="error">(required)</span>
+                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Religion <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Stret<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <input type="text" id="txtStreet" name="txtStreet" #txtStreet="ngModel" [(ngModel)]="street" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtStreet.touched) && txtStreet.errors?.required" class="error">(required)</span>                                                
+                                            </div>
+                                            <div class="col-md-2">
+                                                <mat-label>Avenue<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <input type="text" id="txtAvenue" name="txtAvenue" #txtAvenue="ngModel" [(ngModel)]="avenue" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtAvenue.touched) && txtAvenue.errors?.required" class="error">(required)</span>
+                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Passport Number <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>House Number<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-4">                                            
+                                                <input type="text" id="txtHouseNumber" name="txtHouseNumber" #txtHouseNumber="ngModel" [(ngModel)]="housenumber" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtHouseNumber.touched) && txtHouseNumber.errors?.required" class="error">(required)</span>                                                
+                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Civil ID Expiry Date <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+
+                                        <br>                                        
+                                        <h5>Health Status</h5>   
+
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Student has Health Problems?<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            <div class="col-md-10">                                            
+                                                <mat-radio-group id="radStudenthealth" name="radStudenthealth" #radStudenthealth="ngModel" [(ngModel)]="healthstatus" ngModel required >
+                                                    <mat-radio-button value="1" color="primary">Yes</mat-radio-button>&nbsp;
+                                                    <mat-radio-button value="2" color="primary">No</mat-radio-button>
+                                                  </mat-radio-group>                                            
+                                                <span *ngIf="(submitted || radStudenthealth.touched) && radStudenthealth.errors?.required" class="error">(required)</span>
+                                            </div>                                            
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <mat-label>Date of Birth <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <mat-label>Health Status Details<span class="compulsory">*</span></mat-label>
+                                            </div>
+                                            
+                                            <div class="col-md-10">                                            
+                                                <input type="text" id="txtHealthDetails" name="txtHealthDetails" #txtHealthDetails="ngModel" [(ngModel)]="healthstatusdetails" ngModel required matInput autocomplete="off" class="form-control">
+                                                <span *ngIf="(submitted || txtHealthDetails.touched) && txtHealthDetails.errors?.required" class="error">(required)</span>                                                
+                                            </div>                                            
                                         </div>
-                                        <div class="col-3">
-                                            <mat-label>Birth Certificate No <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
-                                        </div>
-                                        <div class="col-3">
-                                            <mat-label>Birth Certificate Issue Date <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
-                                        </div>
-                                        <div class="col-3">
-                                            <mat-label>Country of Birth <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <mat-label>Birth Certificate Issue Country <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
-                                        </div>
-                                        <div class="col-3">
-                                            <mat-label>Grade Applied For <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
-                                        </div>
-                                        
-                                    </div>
-                                    <br>
-                                    <h5>Address Details</h5>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <mat-label>Area <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
-                                        </div>
-                                        <div class="col-3">
-                                            <mat-label>Block <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
-                                        </div>
-                                        <div class="col-3">
-                                            <mat-label>Street <span class="compulsory">*</span></mat-label>
-                                            <input type="email" matInput autocomplete="off" class="form-control">
-                                        </div>
-                                        <div class="col-3">
-                                            <mat-label>Avenue <span class="compulsory">*</span></mat-label>
-                                            <input type="email" matInput autocomplete="off" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <mat-label>House Number <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
-                                        </div>                                       
-                                    </div>
-                                    <br>
-                                    <h5>Health Status</h5>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <mat-label>Student has health problems? <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
-                                        </div>
-                                        <div class="col-3">
-                                            <mat-label>Health Status Details <span class="compulsory">*</span></mat-label>
-                                            <input type="text" matInput autocomplete="off" class="form-control">
-                                        </div>                                       
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <button class="btn btn-default btn-sm" (click)="btnStudentDetailsNext()" type="button">Next</button>
+                <br>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-default btn-sm"  type="submit">Next</button>
+                    </div>
                 </div>
-            </div>
+            </form>           
         </div>
     </section>
     <!-- END SECTION ADMISSION FORM -->
