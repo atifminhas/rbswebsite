@@ -23,6 +23,30 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 
 export class AdmissionFormFatherDetailComponent implements OnInit {
+
+
+  //model can move later to models  folder
+  civilid: string;
+  nationalitycategory: number;
+  nationality: number;
+  maritalstatus: number;
+  firstnamear: string;
+  secondnamear: string;
+  thirdnamear: string;
+  fourthnamear: string;
+  firstnameen: string;
+  secondnameen: string;
+  thirdnameen: string;
+  fourthnameen: string;
+  qualification: number;
+  employed: number;
+  jobtitle: number;
+  jobsector: number;
+  mobilenumber: number;
+  homenumber: number;
+  emailaddress: string;
+
+
   linkPrefix:string = 'en';
 
   breadcrumb: String[];
@@ -48,8 +72,8 @@ export class AdmissionFormFatherDetailComponent implements OnInit {
     this.breadcrumb = breadcrumb;
   }
 
-  btnFatherDetailNext(data){
-    console.log(data);
+  btnFatherDetailNext(){
+    //console.log(data);
     this.router.navigate([this.linkPrefix+ '/admission-form/mother-details']);
   }
 }

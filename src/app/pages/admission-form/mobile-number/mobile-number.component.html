@@ -29,7 +29,8 @@
                                         <div class="row">
                                             <div class="col-6 offset-lg-3">
                                                 <mat-label>Enter your mobile number 
-                                                <span class="compulsory" *ngIf="mobile.invalid">(Required)</span>
+                                                <span class="compulsory" *ngIf="mobile.errors?.required">(Required)</span>
+                                                <span *ngIf="mobile.errors?.maxlength || mobile.errors?.minlength" class="error">Mobile not valid</span>
                                                 </mat-label>
                                                 <input type="text" oninput="this.value=this.value.replace(/[^\d]/,'')" minlength="8" maxlength="8" [(ngModel)]="mobiledata" #mobile="ngModel" name="mobile"  required ngModel matInput autocomplete="off" class="form-control">
                                                 <button class="btn btn-default btn-sm" [disabled]="mobile.invalid" (click)=btnMobileNext() type="button">Next</button>
