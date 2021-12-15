@@ -166,6 +166,7 @@
                                         <div class="col-md-2">
                                             <mat-label>Job Title <span class="compulsory">*</span></mat-label>
                                         </div>
+                                        
                                         <div class="col-md-4">
                                             <mat-select id="ddlJobTitle" name="ddlJobTitle" #ddlJobTitle="ngModel" [(ngModel)]="jobtitle" ngModel required class="form-control" >
                                                 <mat-option *ngFor="let lookup of lookups?.JobTitles" [value]='lookup.Id'>{{lookup.Title}}</mat-option>
