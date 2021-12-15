@@ -41,84 +41,84 @@
                                     </div>
                                     <br>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>First Name (Arabic)<span class="compulsory">*</span> </mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <input type="text" id="txtFirstNameAr" name="txtFirstNameAr" #txtFirstNameAr="ngModel" [(ngModel)]="firstnamear" ngModel required matInput autocomplete="off" class="form-control">
                                             <span *ngIf="(submitted || txtFirstNameAr.touched) && txtFirstNameAr.errors?.required" class="error">required</span>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Second Name (Arabic)<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <input type="text" id="txtSecondNameAr" name="txtSecondNameAr" #txtSecondNameAr="ngModel" [(ngModel)]="secondnamear" ngModel required matInput autocomplete="off" class="form-control">
                                             <span *ngIf="(submitted || txtSecondNameAr.touched) && txtSecondNameAr.errors?.required" class="error">required</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Third Name (Arabic)<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <input type="text" id="txtThirdNameAr" name="txtThirdNameAr" #txtThirdNameAr="ngModel" [(ngModel)]="thirdnamear" ngModel required matInput autocomplete="off" class="form-control">
                                             <span *ngIf="(submitted || txtThirdNameAr.touched) && txtThirdNameAr.errors?.required" class="error">required</span>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Fourth Name (Arabic)<span class="compulsory">*</span></mat-label>                                           
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <input type="text" id="txtFourthNameAr" name="txtFourthNameAr" #txtFourthNameAr="ngModel" [(ngModel)]="fourthnamear" ngModel required matInput autocomplete="off" class="form-control">
                                             <span *ngIf="(submitted || txtFourthNameAr.touched) && txtFourthNameAr.errors?.required" class="error">required</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>First Name (English)<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <input type="text" id="txtFirstNameEn" name="txtFirstNameEn" #txtFirstNameEn="ngModel" [(ngModel)]="firstnameen" ngModel required matInput autocomplete="off" class="form-control">
                                             <span *ngIf="(submitted || txtFirstNameEn.touched) && txtFirstNameEn.errors?.required" class="error">(required)</span>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Second Name (English)<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <input type="text" id="txtSecondNameEn" name="txtSecondNameEn" #txtSecondNameEn="ngModel" [(ngModel)]="secondnameen" ngModel required matInput autocomplete="off" class="form-control">
                                             <span *ngIf="(submitted || txtSecondNameEn.touched) && txtSecondNameEn.errors?.required" class="error">(required)</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Third Name (English)<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <input type="text" id="txtThirdNameEn" name="txtThirdNameEn" #txtThirdNameEn="ngModel" [(ngModel)]="thirdnameen" ngModel required matInput autocomplete="off" class="form-control">
                                             <span *ngIf="(submitted || txtThirdNameEn.touched) && txtThirdNameEn.errors?.required" class="error">(required)</span>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Fourth Name (English)<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <input type="text" id="txtFourthNameEn" name="txtFourthNameEn" #txtFourthNameEn="ngModel" [(ngModel)]="fourthnameen" ngModel required matInput autocomplete="off" class="form-control">
                                             <span *ngIf="(submitted || txtFourthNameEn.touched) && txtFourthNameEn.errors?.required" class="error">(required)</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Nationality Category<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <mat-select id="ddlnationalitycategory" name="ddlnationalitycategory" #ddlnationalitycategory="ngModel" [(ngModel)]="nationalitycategory" ngModel required class="form-control">
                                                 <mat-option [value]='1'>Kuwaiti</mat-option>
                                                 <mat-option [value]='2'>Non-Kuwaiti</mat-option>
                                             </mat-select>
                                             <span *ngIf="(submitted || ddlnationalitycategory.touched) && ddlnationalitycategory.errors?.required" class="error">(required)</span>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Nationality<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">                                            
+                                        <div class="col-md-4">                                            
                                             <mat-select id="ddlnationality" name="ddlnationality" #ddlnationality="ngModel"  [(ngModel)]="nationality" ngModel required class="form-control"  >
                                                 <mat-option [value]='1'>Kuwait</mat-option>
                                                 <mat-option [value]='2'>Egypt</mat-option>
@@ -128,10 +128,10 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Marital Status<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">                                            
+                                        <div class="col-md-4">                                            
                                             <mat-select id="ddlmaritalstatus" name="ddlmaritalstatus" #ddlmaritalstatus="ngModel" [(ngModel)]="maritalstatus" ngModel required class="form-control" >
                                                 <mat-option [value]='1'>Married</mat-option>
                                                 <mat-option [value]='2'>Un-Married</mat-option>
@@ -145,20 +145,20 @@
                                     <br>
                                     <h5>Qualification & Job Details</h5>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Qualification<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <mat-select id="ddlQualification" name="ddlQualification" #ddlQualification="ngModel" [(ngModel)]="qualification" ngModel required class="form-control" >
                                                 <mat-option [value]='1'>Graduate</mat-option>
                                                 <mat-option [value]='2'>Post Graduate</mat-option>
                                             </mat-select>
                                             <span *ngIf="(submitted || ddlQualification.touched) && ddlQualification.errors?.required" class="error">(required)</span>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Employeed?<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <mat-radio-group id="radEmployed" name="radEmployed" #radEmployed="ngModel" [(ngModel)]="employed" ngModel required >
                                                 <mat-radio-button value="1" color="primary">Yes</mat-radio-button>&nbsp;
                                                 <mat-radio-button value="2" color="primary">No</mat-radio-button>
@@ -167,10 +167,10 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Job Title<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <mat-select id="ddlJobTitle" name="ddlJobTitle" #ddlJobTitle="ngModel" [(ngModel)]="jobtitle" ngModel required class="form-control" >
                                                 <mat-option [value]='1'>Doctor</mat-option>
                                                 <mat-option [value]='2'>Engineer</mat-option>
@@ -178,10 +178,10 @@
                                             </mat-select>
                                             <span *ngIf="(submitted || ddlJobTitle.touched) && ddlJobTitle.errors?.required" class="error">(required)</span>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Job Sector<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <mat-select id="ddlJobSector" name="ddlJobSector" #ddlJobSector="ngModel" [(ngModel)]="jobsector" ngModel required class="form-control" >
                                                 <mat-option [value]='1'>Governoment</mat-option>
                                                 <mat-option [value]='2'>Private</mat-option>
@@ -194,30 +194,33 @@
                                     <h5>Contact Information</h5>
 
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Mobile Number<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <input type="text" id="txtMobileNumber" name="txtMobileNumber" #txtMobileNumber="ngModel" [(ngModel)]="mobilenumber" ngModel required matInput 
                                             oninput="this.value=this.value.replace(/[^\d]/,'')" minlength="8" maxlength="8" autocomplete="off" class="form-control">
                                             <span *ngIf="(submitted || txtMobileNumber.touched) && txtMobileNumber.errors?.required" class="error">(required)</span>
                                             <span *ngIf="(submitted || txtMobileNumber.touched) && txtMobileNumber.errors?.maxlength || txtMobileNumber.errors?.minlength" class="error">Mobile not valid</span>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Home Phone Number<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
-                                            <input type="text" id="txtHomePhoneNumber" name="txtHomePhoneNumber" #txtHomePhoneNumber="ngModel" [(ngModel)]="homenumber" ngModel required matInput autocomplete="off" class="form-control">
+                                        <div class="col-md-4">
+                                            <input type="text" id="txtHomePhoneNumber" name="txtHomePhoneNumber" #txtHomePhoneNumber="ngModel" [(ngModel)]="homenumber" 
+                                            oninput="this.value=this.value.replace(/[^\d]/,'')" minlength="8" maxlength="8" ngModel required matInput autocomplete="off" class="form-control">
                                             <span *ngIf="(submitted || txtHomePhoneNumber.touched) && txtHomePhoneNumber.errors?.required" class="error">(required)</span>
+                                            <span *ngIf="(submitted || txtMobileNumber.touched) && txtHomePhoneNumber.errors?.maxlength || txtHomePhoneNumber.errors?.minlength" class="error">Home number not valid</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-md-2">
                                             <mat-label>Email Address<span class="compulsory">*</span></mat-label>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-md-4">
                                             <input type="email" id="txtEmailAddress" name="txtEmailAddress" #txtEmailAddress="ngModel" [(ngModel)]="emailaddress" ngModel required matInput autocomplete="off" class="form-control">
                                             <span *ngIf="(submitted || txtEmailAddress.touched) && txtEmailAddress.errors?.required" class="error">(required)</span>
+                                            <span *ngIf="(submitted || txtEmailAddress.touched) && txtEmailAddress.dirty && txtEmailAddress.value != ''" class="error">Email address not valid</span>
                                         </div>
                                     </div>
                                 </div>
@@ -237,7 +240,7 @@
         </div>
     </section>
     <!-- END SECTION ADMISSION FORM -->
-    
+          
     <app-footer></app-footer>
 </div>
 

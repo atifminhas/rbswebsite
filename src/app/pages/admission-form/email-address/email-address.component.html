@@ -34,7 +34,7 @@
                                                 </mat-label>
                                                 
                                                 <input type="text" [(ngModel)]="emaildata" #email="ngModel" name="email" email  required ngModel matInput autocomplete="off" class="form-control">                                                
-                                                <span class="error" *ngIf="email.touched && email.invalid && email.value != ''">Email address not valid</span>
+                                                <span class="error" *ngIf="email.touched && email.dirty && email.value != ''">Email address not valid</span>
                                                 <br>
                                                 <button class="btn btn-default btn-sm" [disabled]="email.invalid" (click)=btnEmailNext() type="button">Next</button>
                                             </div>

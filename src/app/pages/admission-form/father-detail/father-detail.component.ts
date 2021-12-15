@@ -42,8 +42,8 @@ export class AdmissionFormFatherDetailComponent implements OnInit {
   employed: number;
   jobtitle: number;
   jobsector: number;
-  mobilenumber: number;
-  homenumber: number;
+  mobilenumber: string;
+  homenumber: string;
   emailaddress: string;
 
 
