@@ -41,7 +41,7 @@ export class AdmissionFormAskAnotherStudentComponent implements OnInit {
 
   btnAddStudent(option){
     if(option == true)
-      this.router.navigate([this.linkPrefix+ '/admission-form/submit-application']);
+      this.router.navigate([this.linkPrefix+ '/admission-form/student-details']);
     else  
     this.router.navigate([this.linkPrefix+ '/admission-form/submit-application']);
   }

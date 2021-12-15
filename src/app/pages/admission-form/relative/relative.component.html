@@ -18,15 +18,15 @@
                 </div>
             </div>
 
-            <!-- MOTHER DETAILS -->
-            <form #motherDetails="ngForm" (ngSubmit)="btnMotherDetailsNext(motherDetails.valid)" >
+            <!-- RELATIVE DETAILS -->
+            <form #relativeDetails="ngForm" (ngSubmit)="btnRelativeDetailsNext(relativeDetails.valid)" >
             <div class="row">
                 <div class="col-12">
                     <div class="box_shadow1 radius_all_10">
                         <div class="row no-gutters">
                             <div class="col-md-12">
                                 <div class="form-padding">
-                                    <h4>Mother Details</h4>                                   
+                                    <h4>Relative Details</h4>                                   
                                     <div class="row">
                                         <div class="col-md-2">
                                             <mat-label>Civil ID<span class="compulsory">*</span> </mat-label>                                                                                                                                                                              
@@ -37,6 +37,16 @@
                                                 <span *ngIf="txtcivilid.errors?.minlength || txtcivilid.errors?.maxlength" class="error">
                                                     Must be 12 Characters
                                                 </span> 
+                                        </div>
+                                        <div class="col-md-2">
+                                            <mat-label>Relationship Type<span class="compulsory">*</span> </mat-label>                                                                                                                                                                              
+                                        </div>
+                                        <div class="col-md-4">                                            
+                                            <mat-select id="ddlRelationshipType" name="ddlRelationshipType" #ddlRelationshipType="ngModel" [(ngModel)]="relationshiptype" ngModel required class="form-control">
+                                                <mat-option [value]='1'>Kuwaiti</mat-option>
+                                                <mat-option [value]='2'>Non-Kuwaiti</mat-option>
+                                            </mat-select>
+                                            <span *ngIf="(submitted || ddlRelationshipType.touched) && ddlRelationshipType.errors?.required" class="error">required</span>                                                
                                         </div >
                                     </div>
                                     <br>

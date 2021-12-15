@@ -41,7 +41,7 @@ export class AdmissionFormAskRelativeComponent implements OnInit {
 
   btnAddRelative(option){
     if(option == true)
-      this.router.navigate([this.linkPrefix+ '/admission-form/student-details']);
+      this.router.navigate([this.linkPrefix+ '/admission-form/relative']);
     else  
     this.router.navigate([this.linkPrefix+ '/admission-form/student-details']);
   }

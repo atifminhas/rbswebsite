@@ -28,6 +28,41 @@ export class AdmissionFormStudentDetailsComponent implements OnInit {
   breadcrumb: String[];
   bannerPicture: String;
 
+  //model can move later to models  folder
+  civilid: string;
+  civilidserialnumber: string;
+  nationalitycategory: number;
+  nationality: number;
+  firstnamear: string;
+  secondnamear: string;
+  thirdnamear: string;
+  fourthnamear: string;
+  firstnameen: string;
+  secondnameen: string;
+  thirdnameen: string;
+  fourthnameen: string;
+  gender: number;
+  religion: number;
+  passportnumber: string;
+  civilidexpirydate: Date;
+  dateofbirth: Date;
+  birthcertificatenumber: number;
+  birthcertificateissuedate: Date;
+  countryofbirth: number;
+  birthcertificateissuecountry: number;
+  gradeappliedfor: number;
+
+  area: number;
+  block: string;
+  street: string;
+  avenue: string;
+  housenumber: string;
+
+  healthstatus: boolean;
+  healthstatusdetails: string;
+  
+  submitted = false;
+
   constructor(
     private router: Router, 
     private languageService: LanguageService,
@@ -42,7 +77,10 @@ export class AdmissionFormStudentDetailsComponent implements OnInit {
     breadcrumb.push("Admission Form");
     this.breadcrumb = breadcrumb;
   }
-  btnStudentDetailsNext(){
-    this.router.navigate([this.linkPrefix+ '/admission-form/ask-another-student']);
+  btnStudentDetailsNext(valid: boolean){
+    this.submitted = true;
+    
+    if(valid)
+      this.router.navigate([this.linkPrefix+ '/admission-form/ask-another-student']);
   }
 }

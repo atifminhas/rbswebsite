@@ -58,6 +58,7 @@ import { AdmissionFormStudentDetailsComponent } from './admission-form/student-d
 import { AdmissionFormAskRelativeComponent } from './admission-form/ask-relative/ask-relative.component';
 import { AdmissionFormAskAnotherStudentComponent } from './admission-form/ask-another-student/ask-another-student.component';
 import { AdmissionFormSubmitApplicationComponent } from './admission-form/submit-application/submit-application.component';
+import { AdmissionFormRelativeComponent } from './admission-form/relative/relative.component';
 
 @NgModule({
   declarations: [
@@ -83,13 +84,15 @@ import { AdmissionFormSubmitApplicationComponent } from './admission-form/submit
     AdmissionFormMobileNumberComponent,
     AdmissionFormFatherDetailComponent,
     AdmissionFormMotherDetailsComponent,
+    AdmissionFormRelativeComponent,
     AdmissionFormStudentDetailsComponent,
     AdmissionFormAskRelativeComponent,
     AdmissionFormAskAnotherStudentComponent,
     AdmissionFormSubmitApplicationComponent,
     CurencyPipe,
     StripHtmlPipe,
-    CustomDatePipe,                
+    CustomDatePipe,
+                    
     ],
   imports: [
     CommonModule,
