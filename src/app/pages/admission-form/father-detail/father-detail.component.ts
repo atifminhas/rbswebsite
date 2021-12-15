@@ -48,6 +48,7 @@ export class AdmissionFormFatherDetailComponent implements OnInit {
 
 
   linkPrefix:string = 'en';
+  submitted = false;
 
   breadcrumb: String[];
   bannerPicture: String;
@@ -72,8 +73,10 @@ export class AdmissionFormFatherDetailComponent implements OnInit {
     this.breadcrumb = breadcrumb;
   }
 
-  btnFatherDetailNext(){
+  btnFatherDetailNext(valid: boolean){
     //console.log(data);
-    this.router.navigate([this.linkPrefix+ '/admission-form/mother-details']);
+    this.submitted = true;
+    if(valid)
+      this.router.navigate([this.linkPrefix+ '/admission-form/mother-details']);
   }
 }

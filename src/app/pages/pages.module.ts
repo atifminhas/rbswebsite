@@ -25,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { CurencyPipe } from '../pipes/curency/curency.pipe';
 import { StripHtmlPipe } from '../pipes/striphtml/striphtml.pipe';
@@ -115,6 +116,7 @@ import { AdmissionFormSubmitApplicationComponent } from './admission-form/submit
     MatMomentDateModule,
     MatCardModule,
     MatCheckboxModule,
+    MatRadioModule,
     MatCarouselModule.forRoot()
   ],
   exports: [
