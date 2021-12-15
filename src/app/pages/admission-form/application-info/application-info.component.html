@@ -27,9 +27,9 @@
                                 <div class="form-padding">
                                     <div class="field_form text-center">
                                         <p>Please select the school year.</p>
-                                        <button [ngClass]="schoolYear=='1'?'btn-user-selected':''" class="btn btn-default btn-md btn-school-year" type="button" (click)=selectSchoolYear(1)>Currenct School Year<br>(2021 - 2022) Second Semester</button>
+                                        <button [ngClass]="schoolYear==25 ? 'btn-user-selected' : ''" class="btn btn-default btn-md btn-school-year" type="button" (click)="selectSchoolYear(25, 2)">Currenct School Year<br>(2021 - 2022) Second Semester</button>
                                         &nbsp;
-                                        <button [ngClass]="schoolYear=='2'?'btn-user-selected':''" class="btn btn-default btn-md btn-school-year" type="button" (click)=selectSchoolYear(2)>Next School Year<br>(2022 - 2023) First Semester</button>
+                                        <button [ngClass]="schoolYear==26 ? 'btn-user-selected' : ''" class="btn btn-default btn-md btn-school-year" type="button" (click)="selectSchoolYear(26, 1)">Next School Year<br>(2022 - 2023) First Semester</button>
                                     </div>
                                 </div>
                             </div>
@@ -56,9 +56,7 @@
                                             
                                                 </mat-label>
                                                 <mat-select class="form-control" [(ngModel)]="whodata" id="who" name="who" #who="ngModel" ngModel required>
-                                                    <mat-option [value]='1'>Father</mat-option>
-                                                    <mat-option [value]='2'>Mother</mat-option>
-                                                    <mat-option [value]='3'>Guardian</mat-option>
+                                                    <mat-option *ngFor="let lookup of lookups?.RelationshipTypes" [value]='lookup.Id'>{{lookup.Title}}</mat-option>
                                                 </mat-select>
                                                 <button class="btn btn-default btn-sm" [disabled]="who.invalid" (click)="btnApplicationInfoNext()" type="button">Next</button>
                                             </div>

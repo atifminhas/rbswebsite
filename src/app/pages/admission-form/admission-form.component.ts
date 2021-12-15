@@ -44,8 +44,7 @@ export class AdmissionFormComponent implements OnInit {
   constructor(
     private router: Router,    
     private dialog: MatDialog,
-    private languageService: LanguageService,
-    public contentPageService: ContentPageService
+    private languageService: LanguageService
   ) 
   {
     this.getBreadcrumb();
@@ -54,7 +53,7 @@ export class AdmissionFormComponent implements OnInit {
   ngOnInit(): void {    
     this.linkPrefix = this.languageService.currentLanguage;
 
-    this.openDisclaimer();
+    //this.openDisclaimer();
   }
 
   getBreadcrumb() {
@@ -77,8 +76,9 @@ export class AdmissionFormComponent implements OnInit {
   }
 
   confirmDisclaimer() {
-    this.isConfirmed = true;
-    this.disclaimerDialog.close();
+    this.router.navigate([this.linkPrefix+ '/admission-form/application-info']);
+    // this.isConfirmed = true;
+    // this.disclaimerDialog.close();
   }
 
   selectSchoolYear(o) {}

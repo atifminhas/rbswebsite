@@ -7,6 +7,7 @@ import { NewsService } from 'src/app/services/news.service';
 import { EventsService } from 'src/app/services/events.service';
 import { GalleryService } from 'src/app/services/gallery.service';
 import { LanguageService } from './services/language.service';
+import { AdmissionService } from './services/admission.service';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,7 @@ export class AppComponent {
     public newsService: NewsService,
     public eventsService: EventsService,
     public galleryService: GalleryService,
+    public admissionService: AdmissionService,
     private translate: TranslateService
   ) 
   {
@@ -72,5 +74,6 @@ export class AppComponent {
     this.eventsService.getUpcomingEvents();
     this.eventsService.getEvents();
     this.galleryService.getGallery();
+    this.admissionService.getLookups();
   }
 }

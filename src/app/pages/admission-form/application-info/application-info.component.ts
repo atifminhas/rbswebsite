@@ -5,8 +5,10 @@ import {MatDialog} from '@angular/material/dialog';
 import {FormGroup, FormBuilder, FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { LanguageService } from 'src/app/services/language.service';
-import { ContentPageService } from 'src/app/services/content-page.service';
+import { AdmissionService } from 'src/app/services/admission.service';
 import { Router } from '@angular/router';
+import { AdmissionFormLookups, Lookup } from 'src/app/models/lookup.model';
+import { AdmissionApplication } from 'src/app/models/admission-application.model';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -28,16 +30,19 @@ export class AdmissionFormApplicationInfoComponent implements OnInit {
   breadcrumb: String[];
   bannerPicture: String;
 
-  schoolYear: string;
+  lookups: AdmissionFormLookups;
+  schoolYear: number;
+  semester: number;
   isSchoolYearSelected = false;
   whodata: number;
 
   constructor(
     private languageService: LanguageService,
-    public contentPageService: ContentPageService,
+    public admissionService: AdmissionService,
     private router: Router,   
   ) 
   {
+    this.loadLookups();
     this.getBreadcrumb();
   }
   
@@ -52,15 +57,24 @@ export class AdmissionFormApplicationInfoComponent implements OnInit {
     this.breadcrumb = breadcrumb;
   }
 
-  selectSchoolYear(schoolYear) {
-    //alert(schoolYear);
+  selectSchoolYear(schoolYear, semester) {
     this.isSchoolYearSelected = true;
     this.schoolYear = schoolYear;
+    this.semester = semester;
   }
 
   btnApplicationInfoNext(){
-    console.log(this.whodata);
+    var application = {SchoolYearId: this.schoolYear, SemesterId: this.semester, ParentTypeId: this.whodata};
+    this.admissionService.setCurrentApplication(application);
     this.router.navigate([this.linkPrefix+ '/admission-form/email-address']);
+  }
+  
+  loadLookups() {
+    this.admissionService.lookups.subscribe((lookups) => {
+      if (lookups) {
+        this.lookups = lookups;
+      }
+    });
   }
 
 }
