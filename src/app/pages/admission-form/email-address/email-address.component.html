@@ -33,10 +33,11 @@
                                             
                                                 </mat-label>
                                                 
-                                                <input type="text" [(ngModel)]="emaildata" #email="ngModel" name="email" email  required ngModel matInput autocomplete="off" class="form-control">                                                
+                                                <input type="text" [(ngModel)]="email" #txtEmail="ngModel" name="email" email required ngModel matInput autocomplete="off" class="form-control">                                                
                                                 <span class="error" *ngIf="email.touched && email.dirty && email.value != ''">Email address not valid</span>
+                                                <span class="error" *ngIf="errorMessage != ''">{{errorMessage}}</span>
                                                 <br>
-                                                <button class="btn btn-default btn-sm" [disabled]="email.invalid" (click)=btnEmailNext() type="button">Next</button>
+                                                <button class="btn btn-default btn-sm" [disabled]="email.invalid" (click)=validateEmail() type="button">Next</button>
                                             </div>
                                         </div>
                                     </div>
@@ -61,8 +62,8 @@
                                         <div class="row">
                                             <div class="col-6 offset-lg-3">
                                                 <mat-label>Enter the 4 digit code sent on your email address <span class="compulsory">*</span></mat-label>
-                                                <input type="text" email matInput autocomplete="off" class="form-control">
-                                                <button class="btn btn-default btn-sm" (click)=btnEmailVerify() type="button">Verify</button>&nbsp;
+                                                <input type="text" [(ngModel)]="verificationVode" #verificationVode="ngModel" name="verificationVode" required ngModel matInput autocomplete="off" class="form-control">
+                                                <button class="btn btn-default btn-sm" (click)=verifyEmail() type="button">Verify</button>&nbsp;
                                                 <button class="btn btn-default btn-sm" type="button">Resend Code</button>
                                             </div>
                                         </div>

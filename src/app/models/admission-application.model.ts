@@ -3,6 +3,8 @@ export class AdmissionApplication {
     SchoolYearId: number;
     SemesterId: number;
     ParentTypeId: number;
+    IsParentEmailVerified: boolean;
+    IsParentMobileVerified: boolean;
     ParentId: number;
     Parents: Parent[];
     Students: Student[];

@@ -26,6 +26,7 @@ export class AdmissionService {
 
   }
 
+  // LOOKUPS
   public get lookups(): Observable<AdmissionFormLookups> {
     return this._lookups.asObservable();
   }
@@ -43,6 +44,16 @@ export class AdmissionService {
     });
   }
 
+  // VALIDATE EMAIL
+  validateEmail(data: any, callBack: (data: any) => any) {
+    this.http.postRequest('parent/validate/email', data).subscribe((response: Response) => {
+      callBack(response);
+    }, (err: Error) => {
+      callBack({Success: false, Error: err.error.ErrorMessage, ErrorMessage: err.error.ErrorMessage});
+    });
+  }
+
+  // LOCAL STORAGE APPLICAION
   getCurrentApplication() {
       var app = localStorage.getItem("adm_app");
       if(app)
